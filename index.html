@@ -359,10 +359,10 @@
 
         <!-- Typing Mode Input -->
         <div id="cloze-type-area" class="hidden space-y-2">
-          <div class="flex gap-1.5">
-            <input type="text" id="cloze-input-word" placeholder="輸入英文..." class="flex-1 p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-xs sm:text-sm">
-            <button onclick="checkTypedClozeAnswer()" class="px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition text-xs sm:text-sm">送出</button>
-          </div>
+          <form onsubmit="event.preventDefault(); checkTypedClozeAnswer();" class="flex gap-1.5">
+            <input type="text" id="cloze-input-word" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="輸入英文單字..." class="flex-1 p-2 sm:p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-xs sm:text-sm">
+            <button type="submit" class="px-4 py-2 sm:py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition text-xs sm:text-sm active:scale-95 flex-shrink-0">送出</button>
+          </form>
           <div id="cloze-type-hint" class="text-[11px] text-slate-400"></div>
         </div>
 
@@ -1190,8 +1190,7 @@
         btn.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-amber-400 bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600 text-xs font-bold shadow-sm shadow-amber-200 transition-all flex items-center gap-1.5 active:scale-95";
         choiceArea.classList.add('hidden');
         typeArea.classList.remove('hidden');
-        const inputField = document.getElementById('cloze-input-word');
-        if (inputField) inputField.focus();
+        // 不主動自動 focus，避免手機虛擬鍵盤一按切換就猛烈彈起遮擋題目
         showToast('已切換至手動拼字模式 ✍️');
       } else {
         if (textSpan) textSpan.textContent = '切換為手動拼字模式';
@@ -1209,9 +1208,11 @@
     }
 
     function speakClozeSentence() {
-      if (currentClozeWord) {
-        speakText(currentClozeWord.sentence);
-      }
+      if (!currentClozeWord) return;
+      // 避免主動念出答案，將空格處替換為「blank」，讓使用者能聽懂語境又不會被暴雷
+      const targetRegex = new RegExp(`\\b(${currentClozeWord.word}|${currentClozeWord.target})\\b`, 'gi');
+      const maskedSentence = currentClozeWord.sentence.replace(targetRegex, 'blank');
+      speakText(maskedSentence);
     }
 
     function renderWordTable() {
