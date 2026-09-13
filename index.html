@@ -2,12 +2,12 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>English 4U 9月號單字通 (Unit 1~12)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>單字小樹苗｜English 4U 九月</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <script>
@@ -18,12 +18,35 @@
             sans: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif'],
           },
           colors: {
-            brand: {
-              50: '#eef6ff',
-              100: '#d9ebff',
-              500: '#2563eb',
-              600: '#1d4ed8',
-              700: '#1e40af',
+            morandi: {
+              bg: '#f6f5f1',
+              surface: '#ffffff',
+              sage: '#6b7f71',
+              sageDark: '#526357',
+              sageLight: '#edf2ee',
+              sageBorder: '#c8d4cb',
+              clay: '#b08b7e',
+              clayLight: '#f6f0ed',
+              clayBorder: '#dfcbc4',
+              blue: '#6b7d8c',
+              blueLight: '#ecf1f4',
+              taupe: '#7e786f',
+              charcoal: '#333734',
+              cardBack: '#435147'
+            }
+          },
+          animation: {
+            'pop': 'pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            'float': 'float 3s ease-in-out infinite'
+          },
+          keyframes: {
+            pop: {
+              '0%': { transform: 'scale(0.9)' },
+              '100%': { transform: 'scale(1)' }
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-3px)' }
             }
           }
         }
@@ -32,6 +55,16 @@
   </script>
   
   <style>
+    input, select, textarea {
+      font-size: 16px !important;
+    }
+    html, body {
+      overflow-x: hidden;
+      max-width: 100vw;
+      width: 100%;
+      -webkit-text-size-adjust: 100%;
+      background-color: #f6f5f1;
+    }
     .perspective-1000 {
       perspective: 1000px;
     }
@@ -45,202 +78,198 @@
     .rotate-y-180 {
       transform: rotateY(180deg);
     }
-    /* Smooth transitions */
     .card-flip {
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    /* Custom scrollbars */
+    .morandi-gradient-text {
+      background: linear-gradient(135deg, #445447 0%, #5d7063 50%, #607282 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
     ::-webkit-scrollbar {
       width: 6px;
       height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #f1f5f9;
+      background: #f4f3ef;
     }
     ::-webkit-scrollbar-thumb {
-      background: #cbd5e1;
+      background: #cfd6ce;
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #94a3b8;
+      background: #b5c2b4;
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-800 min-h-screen font-sans flex flex-col antialiased selection:bg-brand-100 selection:text-brand-700">
+<body class="text-morandi-charcoal min-h-screen font-sans flex flex-col antialiased selection:bg-morandi-sageLight selection:text-morandi-sageDark">
 
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-30 shadow-xs">
-    <div class="max-w-6xl mx-auto px-3 sm:px-6 h-12 sm:h-16 flex items-center justify-between gap-2">
-      <div class="flex items-center gap-2 sm:gap-3 min-w-0">
-        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-blue-600 flex-shrink-0 flex items-center justify-center text-white shadow-sm shadow-blue-200">
-          <i class="fa-solid fa-graduation-cap text-sm sm:text-lg"></i>
+  <header class="bg-white/90 backdrop-blur-md border-b border-morandi-sageBorder/40 sticky top-0 z-30 shadow-sm">
+    <div class="max-w-5xl mx-auto px-3 sm:px-6 h-14 sm:h-16 flex items-center justify-between gap-2">
+      <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-tr from-[#5a6e60] to-[#809586] flex-shrink-0 flex items-center justify-center text-white shadow-sm">
+          <i class="fa-solid fa-seedling text-base sm:text-lg text-[#eaf1ec] animate-float"></i>
         </div>
         <div class="min-w-0">
-          <h1 class="font-bold text-slate-900 text-sm sm:text-xl tracking-tight leading-none truncate">English 4U 9月號單字通</h1>
-          <p class="text-[11px] sm:text-xs text-slate-500 font-medium mt-0.5 truncate hidden sm:block">高中核心單字互動學習網 (Unit 1 - 12)</p>
+          <div class="flex items-center gap-1.5">
+            <h1 class="font-black text-sm sm:text-lg tracking-tight leading-none morandi-gradient-text truncate">單字小樹苗｜English 4U 九月</h1>
+            <span class="hidden sm:inline-block text-[10px] font-bold px-2 py-0.5 rounded-full bg-morandi-sageLight text-morandi-sageDark border border-morandi-sageBorder">🌱 SPROUT</span>
+          </div>
+          <p class="text-[11px] sm:text-xs text-morandi-taupe font-medium mt-1 truncate">
+            高中核心單字庫 · Unit 1~12
+          </p>
         </div>
       </div>
 
-      <!-- Quick Action Badges -->
-      <div class="flex items-center gap-1.5 sm:gap-2 flex-shrink-0">
-        <button id="starred-filter-toggle" onclick="toggleStarredOnlyMode()" class="px-2 sm:px-3 py-1 sm:py-1.5 rounded-lg border text-xs sm:text-sm font-medium transition-all flex items-center gap-1 bg-amber-50 border-amber-200 text-amber-700 hover:bg-amber-100 active:scale-95">
-          <i class="fa-solid fa-star text-amber-500"></i>
+      <div class="flex items-center gap-2 flex-shrink-0">
+        <button id="starred-filter-toggle" onclick="toggleStarredOnlyMode()" class="px-2.5 sm:px-3.5 py-1.5 rounded-xl border text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 bg-morandi-clayLight border-morandi-clayBorder text-morandi-clay hover:bg-[#f1e8e4] active:scale-95 shadow-sm">
+          <i class="fa-solid fa-star text-morandi-clay"></i>
           <span class="hidden sm:inline">複習清單</span>
-          <span id="header-starred-count" class="bg-amber-200 text-amber-900 text-[10px] sm:text-xs px-1.5 py-0.2 rounded-full font-bold">0</span>
+          <span id="header-starred-count" class="bg-morandi-clay text-white text-[10px] sm:text-xs px-2 py-0.2 rounded-full font-black">0</span>
         </button>
       </div>
     </div>
   </header>
 
-  <nav class="bg-white border-b border-slate-200 shadow-xs">
-    <div class="max-w-6xl mx-auto px-2 sm:px-6 py-1.5 sm:py-2.5 flex flex-wrap sm:flex-nowrap items-center justify-between gap-1.5 sm:gap-3">
-      <!-- Main Mode Tabs -->
-      <div class="flex items-center p-0.5 sm:p-1 bg-slate-100 rounded-lg sm:rounded-xl w-full sm:w-auto justify-between sm:justify-start">
-        <button onclick="switchMode('cards')" id="tab-cards" class="mode-tab flex-1 sm:flex-initial text-center px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold transition-all bg-white text-blue-600 shadow-xs whitespace-nowrap">
-          <i class="fa-solid fa-clone mr-1 text-[11px] sm:text-xs"></i>翻卡
+  <nav class="bg-white/80 backdrop-blur-xs border-b border-morandi-sageBorder/40 shadow-xs">
+    <div class="max-w-5xl mx-auto px-2.5 sm:px-6 py-2 flex flex-wrap sm:flex-nowrap items-center justify-between gap-2">
+      <div class="flex items-center p-1 bg-[#edece8]/80 rounded-xl w-full sm:w-auto justify-between sm:justify-start gap-1">
+        <button onclick="switchMode('cards')" id="tab-cards" class="mode-tab flex-1 sm:flex-initial text-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all bg-white text-morandi-sageDark shadow-sm whitespace-nowrap active:scale-95">
+          <i class="fa-regular fa-clone mr-1.5 text-xs text-morandi-sage"></i>翻卡
         </button>
-        <button onclick="switchMode('quiz')" id="tab-quiz" class="mode-tab flex-1 sm:flex-initial text-center px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900 whitespace-nowrap">
-          <i class="fa-solid fa-list-check mr-1 text-[11px] sm:text-xs"></i>配對
+        <button onclick="switchMode('quiz')" id="tab-quiz" class="mode-tab flex-1 sm:flex-initial text-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all text-morandi-taupe hover:text-morandi-charcoal whitespace-nowrap active:scale-95">
+          <i class="fa-solid fa-list-check mr-1.5 text-xs text-morandi-blue"></i>配對
         </button>
-        <button onclick="switchMode('cloze')" id="tab-cloze" class="mode-tab flex-1 sm:flex-initial text-center px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900 whitespace-nowrap">
-          <i class="fa-solid fa-spell-check mr-1 text-[11px] sm:text-xs"></i>克漏字
+        <button onclick="switchMode('cloze')" id="tab-cloze" class="mode-tab flex-1 sm:flex-initial text-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all text-morandi-taupe hover:text-morandi-charcoal whitespace-nowrap active:scale-95">
+          <i class="fa-solid fa-pen mr-1.5 text-xs text-morandi-clay"></i>克漏字
         </button>
-        <button onclick="switchMode('list')" id="tab-list" class="mode-tab flex-1 sm:flex-initial text-center px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-md sm:rounded-lg text-xs sm:text-sm font-semibold transition-all text-slate-600 hover:text-slate-900 whitespace-nowrap">
-          <i class="fa-solid fa-book-bookmark mr-1 text-[11px] sm:text-xs"></i>列表
+        <button onclick="switchMode('list')" id="tab-list" class="mode-tab flex-1 sm:flex-initial text-center px-3 sm:px-4 py-1.5 rounded-lg text-xs sm:text-sm font-bold transition-all text-morandi-taupe hover:text-morandi-charcoal whitespace-nowrap active:scale-95">
+          <i class="fa-solid fa-book-bookmark mr-1.5 text-xs text-[#738276]"></i>列表
         </button>
       </div>
 
-      <!-- Unit Selector Dropdown -->
       <div class="flex items-center gap-1.5 w-full sm:w-auto justify-end">
-        <span class="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-slate-400 whitespace-nowrap">單元：</span>
-        <select id="unit-selector" onchange="onUnitFilterChange()" class="flex-1 sm:flex-initial bg-slate-50 border border-slate-300 text-slate-700 text-xs sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block py-1 sm:py-1.5 px-2 font-medium">
+        <span class="text-[11px] sm:text-xs font-bold text-morandi-taupe whitespace-nowrap flex items-center gap-1">
+          <i class="fa-solid fa-seedling text-morandi-sage"></i> 單元：
+        </span>
+        <select id="unit-selector" onchange="onUnitFilterChange()" class="flex-1 sm:flex-initial bg-white border border-morandi-sageBorder text-morandi-charcoal text-xs sm:text-sm rounded-xl focus:ring-2 focus:ring-morandi-sage focus:border-morandi-sage block py-1.5 px-2.5 font-semibold shadow-xs">
           <option value="ALL">全部單元 (Unit 1~12)</option>
           <option value="Unit 1">Unit 1</option>
-          <option value="Unit 1, 2">Unit 1, 2</option>
           <option value="Unit 2">Unit 2</option>
-          <option value="Unit 2, 3">Unit 2, 3</option>
           <option value="Unit 3">Unit 3</option>
-          <option value="Unit 3, 4">Unit 3, 4</option>
-          <option value="Unit 4, 5">Unit 4, 5</option>
+          <option value="Unit 4">Unit 4</option>
           <option value="Unit 5">Unit 5</option>
-          <option value="Unit 5, 6">Unit 5, 6</option>
           <option value="Unit 6">Unit 6</option>
-          <option value="Unit 6, 7">Unit 6, 7</option>
           <option value="Unit 7">Unit 7</option>
-          <option value="Unit 7, 8">Unit 7, 8</option>
           <option value="Unit 8">Unit 8</option>
-          <option value="Unit 8, 9">Unit 8, 9</option>
-          <option value="Unit 9, 10">Unit 9, 10</option>
+          <option value="Unit 9">Unit 9</option>
           <option value="Unit 10">Unit 10</option>
-          <option value="Unit 10, 11">Unit 10, 11</option>
           <option value="Unit 11">Unit 11</option>
-          <option value="Unit 11, 12">Unit 11, 12</option>
           <option value="Unit 12">Unit 12</option>
         </select>
       </div>
     </div>
   </nav>
 
-  <main class="flex-1 max-w-5xl w-full mx-auto p-2.5 sm:p-6 flex flex-col justify-start">
+  <main class="flex-1 max-w-4xl w-full mx-auto p-2.5 sm:p-6 flex flex-col justify-start">
     
-    <!-- Unit Global Completion Progress Widget -->
-    <div id="unit-progress-banner" class="mb-3 sm:mb-4 bg-white border border-slate-200/80 shadow-xs rounded-xl p-2.5 sm:p-3.5 transition-all">
+    <div id="unit-progress-banner" class="mb-3 sm:mb-4 bg-white border border-morandi-sageBorder/50 shadow-xs rounded-2xl p-3 sm:p-4 transition-all">
       <div class="flex items-center justify-between mb-1.5">
-        <div class="flex items-center gap-1.5 min-w-0">
-          <span class="w-5 h-5 rounded-md bg-indigo-50 text-indigo-600 flex items-center justify-center text-xs flex-shrink-0">
-            <i class="fa-solid fa-chart-line text-[10px]"></i>
+        <div class="flex items-center gap-2 min-w-0">
+          <span class="w-6 h-6 rounded-lg bg-morandi-sageLight text-morandi-sageDark flex items-center justify-center text-xs flex-shrink-0">
+            <i class="fa-solid fa-chart-pie"></i>
           </span>
-          <span class="text-xs font-bold text-slate-800 truncate" id="unit-progress-title">Unit 1 學習達成度</span>
-          <span id="unit-progress-badge" class="text-[10px] font-semibold px-1.5 py-0.2 rounded-full bg-slate-100 text-slate-600">進行中</span>
+          <span class="text-xs sm:text-sm font-bold text-morandi-charcoal truncate" id="unit-progress-title">全部單元總進度</span>
+          <span id="unit-progress-badge" class="text-[11px] font-bold px-2 py-0.5 rounded-full bg-morandi-sageLight text-morandi-sageDark border border-morandi-sageBorder">培育中 🌱</span>
         </div>
         <div class="flex items-center gap-2 flex-shrink-0 text-xs">
-          <span class="text-slate-500 font-mono text-[11px]" id="unit-progress-ratio">0 / 11 字</span>
-          <span class="text-indigo-600 font-extrabold font-mono text-xs sm:text-sm" id="unit-progress-percent">0%</span>
+          <span class="text-morandi-taupe font-mono text-xs" id="unit-progress-ratio">0 / 132 字</span>
+          <span class="text-morandi-sageDark font-black font-mono text-sm sm:text-base" id="unit-progress-percent">0%</span>
         </div>
       </div>
       
-      <!-- Progress Track -->
-      <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden relative">
-        <div id="unit-progress-fill" class="bg-gradient-to-r from-blue-500 via-indigo-500 to-emerald-500 h-full transition-all duration-500 rounded-full" style="width: 0%"></div>
+      <div class="w-full bg-[#ebeae4] h-2 rounded-full overflow-hidden relative">
+        <div id="unit-progress-fill" class="bg-gradient-to-r from-[#6b7f71] to-[#8fa194] h-full transition-all duration-500 rounded-full" style="width: 0%"></div>
       </div>
       
-      <!-- Motivational caption -->
-      <div class="mt-1 flex items-center justify-between text-[11px] text-slate-400">
-        <span id="unit-progress-encouragement"><i class="fa-regular fa-lightbulb text-amber-400 mr-1"></i>透過翻卡學習或答對測驗即可增加完成度！</span>
-        <button onclick="resetCurrentUnitProgress()" class="hover:text-rose-500 transition ml-2 text-[10px] underline flex-shrink-0" title="重設此單元進度">重設進度</button>
+      <div class="mt-2.5 p-2.5 rounded-xl bg-morandi-sageLight/70 border border-morandi-sageBorder flex items-start sm:items-center justify-between gap-2.5">
+        <div class="flex items-start sm:items-center gap-2 text-xs sm:text-sm text-morandi-sageDark font-semibold min-w-0 flex-1">
+          <span class="w-5 h-5 rounded-full bg-morandi-clay text-white flex items-center justify-center text-xs flex-shrink-0 shadow-xs mt-0.5 sm:mt-0">
+            <i class="fa-solid fa-lightbulb"></i>
+          </span>
+          <span id="unit-progress-encouragement" class="leading-snug break-words">
+            翻卡查看中文與例句、或在測驗中答對，即可自動累計單字進度！
+          </span>
+        </div>
+        <button onclick="resetCurrentUnitProgress()" class="text-morandi-taupe hover:text-morandi-clay transition text-[11px] sm:text-xs font-semibold underline flex-shrink-0 whitespace-nowrap mt-0.5 sm:mt-0">
+          重設進度
+        </button>
       </div>
     </div>
 
-    <!-- Filter status badge / Starred banner -->
-    <div id="filter-banner" class="hidden mb-2.5 sm:mb-4 p-2 sm:p-3 rounded-xl bg-amber-50 border border-amber-200 flex items-center justify-between text-xs sm:text-sm">
-      <div class="flex items-center gap-1.5 sm:gap-2 text-amber-800 font-medium">
-        <i class="fa-solid fa-circle-exclamation text-amber-500"></i>
+    <div id="filter-banner" class="hidden mb-2.5 sm:mb-4 p-2.5 sm:p-3 rounded-xl bg-morandi-clayLight border border-morandi-clayBorder flex items-center justify-between text-xs sm:text-sm">
+      <div class="flex items-center gap-1.5 text-morandi-charcoal font-semibold">
+        <i class="fa-solid fa-star text-morandi-clay"></i>
         <span>正在練習「<strong>複習清單</strong>」</span>
       </div>
-      <button onclick="disableStarredOnlyMode()" class="text-amber-700 hover:text-amber-900 underline font-semibold">
-        返回所有
+      <button onclick="disableStarredOnlyMode()" class="text-morandi-clay hover:underline font-bold">
+        返回所有單字
       </button>
     </div>
 
-    <!-- ============================================== -->
-    <!-- MODE 1: FLASHCARDS (翻卡與發音) -->
-    <!-- ============================================== -->
     <section id="mode-cards" class="space-y-3 sm:space-y-5">
-      <!-- Progress Bar & Counter -->
-      <div class="flex items-center justify-between text-xs sm:text-sm text-slate-500">
+      <div class="flex items-center justify-between text-xs sm:text-sm text-morandi-taupe font-medium">
         <div class="flex items-center gap-1.5">
-          <span class="font-bold text-slate-800" id="card-counter">1 / 132</span>
-          <span class="text-[11px] bg-slate-200 px-1.5 py-0.5 rounded font-medium text-slate-700" id="card-unit-badge">Unit 1</span>
+          <span class="font-bold text-morandi-charcoal" id="card-counter">1 / 132</span>
+          <span class="text-[11px] bg-morandi-sageLight text-morandi-sageDark border border-morandi-sageBorder px-2 py-0.5 rounded-full font-bold" id="card-unit-badge">Unit 1</span>
         </div>
         <div class="flex items-center gap-1.5">
-          <button onclick="shuffleCurrentWords()" title="隨機洗牌" class="p-1.5 hover:bg-slate-200 rounded-lg text-slate-600 transition active:scale-95">
+          <button onclick="shuffleCurrentWords()" title="隨機洗牌" class="p-1.5 hover:bg-morandi-sageLight rounded-lg text-morandi-sageDark transition active:scale-95">
             <i class="fa-solid fa-shuffle text-xs"></i>
           </button>
-          <button onclick="toggleSpeechRate()" id="speed-btn" class="px-2 py-0.5 text-xs font-bold rounded-lg border border-slate-300 bg-white hover:bg-slate-50 transition text-slate-700">
+          <button onclick="toggleSpeechRate()" id="speed-btn" class="px-2 py-0.5 text-xs font-bold rounded-lg border border-morandi-sageBorder bg-white hover:bg-morandi-sageLight transition text-morandi-sageDark shadow-xs">
             語速 1.0x
           </button>
         </div>
       </div>
 
-      <div class="w-full bg-slate-200 h-1.5 sm:h-2 rounded-full overflow-hidden">
-        <div id="card-progress-fill" class="bg-blue-600 h-full transition-all duration-300" style="width: 1%"></div>
+      <div class="w-full bg-[#ebe9e3] h-1.5 sm:h-2 rounded-full overflow-hidden">
+        <div id="card-progress-fill" class="bg-morandi-sage h-full transition-all duration-300" style="width: 1%"></div>
       </div>
 
-      <!-- Flashcard with 3D Flip (Compact height on mobile) -->
       <div class="perspective-1000 w-full max-w-xl mx-auto min-h-[250px] sm:min-h-[340px] cursor-pointer select-none" onclick="flipCard()">
-        <div id="flashcard-inner" class="card-flip transform-style-preserve-3d relative w-full h-full min-h-[250px] sm:min-h-[340px] rounded-2xl shadow-md border border-slate-200">
+        <div id="flashcard-inner" class="card-flip transform-style-preserve-3d relative w-full h-full min-h-[250px] sm:min-h-[340px] rounded-2xl shadow-sm border border-morandi-sageBorder/60">
           
-          <!-- FRONT: English Word & Pronunciation -->
           <div class="backface-hidden absolute inset-0 bg-white rounded-2xl p-4 sm:p-7 flex flex-col justify-between items-center text-center">
-            <div class="w-full flex justify-between items-center text-slate-400">
-              <span class="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md" id="card-front-pos">adj.</span>
-              <button onclick="event.stopPropagation(); toggleStarCurrentWord();" class="p-1.5 hover:bg-amber-50 rounded-full transition" id="card-star-btn">
-                <i class="fa-regular fa-star text-lg text-slate-400"></i>
+            <div class="w-full flex justify-between items-center text-morandi-taupe">
+              <span id="card-front-pos"></span>
+              <button onclick="event.stopPropagation(); toggleStarCurrentWord();" class="p-1.5 hover:bg-morandi-clayLight rounded-full transition" id="card-star-btn">
+                <i class="fa-regular fa-star text-lg text-morandi-taupe"></i>
               </button>
             </div>
 
             <div class="my-auto space-y-1.5 sm:space-y-3">
-              <h2 id="card-word" class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight">dramatic</h2>
-              <p id="card-phonetic" class="text-xs sm:text-base text-slate-500 font-mono tracking-wide">[ drə'mætɪk ]</p>
+              <h2 id="card-word" class="text-3xl sm:text-5xl font-black text-morandi-charcoal tracking-tight">dramatic</h2>
+              <p id="card-phonetic" class="text-xs sm:text-base text-morandi-taupe font-mono tracking-wide">[ drə'mætɪk ]</p>
               
               <div class="flex items-center justify-center gap-2 sm:gap-3 pt-1">
-                <button onclick="event.stopPropagation(); playCurrentWordAudio();" class="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-blue-50 text-blue-600 hover:bg-blue-100 font-semibold text-xs sm:text-sm transition active:scale-95">
+                <button onclick="event.stopPropagation(); playCurrentWordAudio();" class="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-morandi-sageLight text-morandi-sageDark hover:bg-[#dfe7e0] font-bold text-xs sm:text-sm border border-morandi-sageBorder transition active:scale-95">
                   <i class="fa-solid fa-volume-high"></i> 單字發音
                 </button>
-                <button onclick="event.stopPropagation(); playCurrentWordAudio(0.7);" class="inline-flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-full bg-slate-100 text-slate-600 hover:bg-slate-200 text-xs font-medium transition active:scale-95" title="慢速發音">
+                <button onclick="event.stopPropagation(); playCurrentWordAudio(0.7);" class="inline-flex items-center gap-1 px-2.5 py-1.5 sm:px-3 sm:py-2 rounded-full bg-[#f0eee8] text-morandi-taupe hover:bg-[#e6e4dc] text-xs font-semibold transition active:scale-95" title="慢速發音">
                   <i class="fa-solid fa-turtle"></i> 慢速
                 </button>
               </div>
             </div>
 
-            <div class="text-[11px] sm:text-xs text-slate-400 font-medium flex items-center gap-1">
-              <i class="fa-solid fa-rotate mr-0.5"></i> 點擊翻轉看釋義與例句
+            <div class="text-[11px] sm:text-xs text-morandi-taupe font-medium flex items-center gap-1">
+              <i class="fa-solid fa-rotate mr-0.5 text-morandi-sage"></i> 點擊翻轉看釋義與例句
             </div>
           </div>
 
-          <!-- BACK: Chinese & Example Sentence -->
-          <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-blue-700 to-indigo-800 text-white rounded-2xl p-4 sm:p-7 flex flex-col justify-between">
+          <div class="backface-hidden rotate-y-180 absolute inset-0 bg-gradient-to-br from-[#455349] via-[#4d5c52] to-[#3b473f] text-white rounded-2xl p-4 sm:p-7 flex flex-col justify-between">
             <div class="flex justify-between items-center">
-              <span class="text-[11px] sm:text-xs font-semibold bg-white/20 px-2 py-0.5 rounded-md text-white/90" id="card-back-pos">adj.</span>
+              <span class="text-[11px] sm:text-xs font-bold bg-white/15 px-2.5 py-0.5 rounded-md text-white/90" id="card-back-pos">adj.</span>
               <button onclick="event.stopPropagation(); toggleStarCurrentWord();" class="p-1.5 hover:bg-white/10 rounded-full transition" id="card-back-star-btn">
                 <i class="fa-regular fa-star text-lg text-white/70"></i>
               </button>
@@ -248,24 +277,24 @@
 
             <div class="my-auto space-y-2 sm:space-y-4">
               <div>
-                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-blue-200">中文釋義</span>
+                <span class="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-[#cfdad1]">中文釋義</span>
                 <h3 id="card-chinese" class="text-xl sm:text-3xl font-bold mt-0.5 text-white tracking-wide">(有關) 戲劇的</h3>
               </div>
 
               <div class="bg-black/20 rounded-xl p-2.5 sm:p-4 text-left border border-white/10">
                 <div class="flex items-center justify-between mb-1">
-                  <span class="text-[11px] sm:text-xs font-bold text-blue-200">教材實用例句</span>
-                  <button onclick="event.stopPropagation(); playCurrentSentenceAudio();" class="text-white hover:text-blue-200 text-xs transition flex items-center gap-1">
+                  <span class="text-[11px] sm:text-xs font-bold text-[#e1d5cb]">教材實用例句</span>
+                  <button onclick="event.stopPropagation(); playCurrentSentenceAudio();" class="text-white/80 hover:text-white text-xs transition flex items-center gap-1 font-semibold">
                     <i class="fa-solid fa-volume-high"></i> 朗讀
                   </button>
                 </div>
-                <p id="card-sentence" class="text-xs sm:text-base leading-relaxed text-blue-50 font-normal">
-                  Chloe has always loved the <strong class="text-yellow-300 font-semibold underline underline-offset-4">dramatic</strong> arts, and she wants to be a famous actor one day.
+                <p id="card-sentence" class="text-xs sm:text-base leading-relaxed text-[#edf2ee] font-normal">
+                  Chloe has always loved the <strong class="text-[#f1dccb] font-bold underline underline-offset-4">dramatic</strong> arts, and she wants to be a famous actor one day.
                 </p>
               </div>
             </div>
 
-            <div class="text-center text-[11px] sm:text-xs text-blue-200 font-medium">
+            <div class="text-center text-[11px] sm:text-xs text-[#cfdad1] font-medium">
               <i class="fa-solid fa-rotate mr-0.5"></i> 點擊卡片翻回正面
             </div>
           </div>
@@ -273,139 +302,162 @@
         </div>
       </div>
 
-      <!-- Navigation buttons -->
       <div class="flex items-center justify-center gap-3 max-w-xs sm:max-w-sm mx-auto">
-        <button onclick="prevCard()" class="flex-1 py-2 sm:py-3 px-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs sm:text-sm shadow-xs transition active:scale-95 flex items-center justify-center gap-1.5">
+        <button onclick="prevCard()" class="flex-1 py-2.5 sm:py-3 px-4 rounded-xl border border-morandi-sageBorder bg-white hover:bg-morandi-sageLight/50 text-morandi-charcoal font-bold text-xs sm:text-sm shadow-xs transition active:scale-95 flex items-center justify-center gap-1.5">
           <i class="fa-solid fa-arrow-left"></i> 上一個
         </button>
-        <button onclick="nextCard()" class="flex-1 py-2 sm:py-3 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-sm shadow-blue-200 transition active:scale-95 flex items-center justify-center gap-1.5">
+        <button onclick="nextCard()" class="flex-1 py-2.5 sm:py-3 px-4 rounded-xl bg-morandi-sage hover:bg-morandi-sageDark text-white font-bold text-xs sm:text-sm shadow-xs transition active:scale-95 flex items-center justify-center gap-1.5">
           下一個 <i class="fa-solid fa-arrow-right"></i>
         </button>
       </div>
-      <p class="text-center text-[11px] text-slate-400 hidden sm:block">鍵盤提示：按「空白鍵」翻卡，按「左右箭頭」切換單字</p>
+      <p class="text-center text-[11px] text-morandi-taupe hidden sm:block">鍵盤提示：按「空白鍵」翻卡，按「左右箭頭」切換單字</p>
     </section>
 
-    <section id="mode-quiz" class="hidden space-y-3 sm:space-y-6 max-w-xl mx-auto w-full">
-      <div class="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-3 sm:space-y-5">
+    <section id="mode-quiz" class="hidden space-y-3 sm:space-y-6 max-w-xl mx-auto w-full scroll-mt-20">
+      <div class="bg-white p-3.5 sm:p-6 rounded-2xl border border-morandi-sageBorder/50 shadow-xs space-y-3 sm:space-y-5">
         <div class="flex justify-between items-center">
           <div class="flex items-center gap-1.5">
-            <span class="text-[11px] sm:text-xs font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded-md" id="quiz-badge">選擇題</span>
-            <span class="text-xs text-slate-400" id="quiz-counter">題目 1 / 10</span>
+            <span class="text-[11px] sm:text-xs font-bold text-morandi-sageDark bg-morandi-sageLight border border-morandi-sageBorder px-2 py-0.5 rounded-md" id="quiz-badge">選擇題</span>
+            <span class="text-xs text-morandi-taupe font-medium" id="quiz-counter">題目 1 / 10</span>
           </div>
-          <div class="text-xs sm:text-sm font-semibold text-slate-600">
-            得分：<span id="quiz-score" class="text-blue-600 font-bold">0</span>
+          <div class="text-xs sm:text-sm font-semibold text-morandi-taupe">
+            得分：<span id="quiz-score" class="text-morandi-sageDark font-black">0</span>
           </div>
         </div>
 
-        <!-- Question Prompt Area -->
-        <div class="text-center py-2.5 sm:py-4 bg-slate-50 rounded-xl border border-slate-100 relative">
-          <span class="text-[10px] sm:text-xs font-semibold text-slate-400 uppercase tracking-wider" id="quiz-prompt-type">請選出正確的中文解釋</span>
-          <h2 id="quiz-question-word" class="text-2xl sm:text-4xl font-extrabold text-slate-900 mt-1">dramatic</h2>
-          <p id="quiz-question-sub" class="text-xs sm:text-sm text-slate-500 font-mono mt-0.5">[ drə'mætɪk ] · adj.</p>
-          <button onclick="playQuizWordAudio()" class="mt-2 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white border border-slate-200 text-blue-600 hover:bg-blue-50 text-[11px] font-semibold shadow-xs transition active:scale-95">
+        <div class="text-center py-2.5 sm:py-4 bg-morandi-sageLight/50 rounded-xl border border-morandi-sageBorder/70 relative">
+          <span class="text-[10px] sm:text-xs font-semibold text-morandi-taupe uppercase tracking-wider">請選出正確的中文解釋</span>
+          <h2 id="quiz-question-word" class="text-2xl sm:text-4xl font-black text-morandi-charcoal mt-1">dramatic</h2>
+          <p id="quiz-question-sub" class="text-xs sm:text-sm text-morandi-taupe font-mono mt-0.5">[ drə'mætɪk ] · adj.</p>
+          <button onclick="playQuizWordAudio()" class="mt-2 inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-white border border-morandi-sageBorder text-morandi-sageDark hover:bg-morandi-sageLight text-[11px] font-bold shadow-xs transition active:scale-95">
             <i class="fa-solid fa-volume-high"></i> 發音
           </button>
         </div>
 
-        <!-- Options Grid (Single column compact buttons) -->
-        <div class="grid grid-cols-1 gap-2 sm:gap-3" id="quiz-options-container">
-          <!-- Populated by JS -->
-        </div>
+        <div class="grid grid-cols-1 gap-2 sm:gap-3" id="quiz-options-container"></div>
 
-        <!-- Feedback & Next Button -->
         <div id="quiz-feedback-box" class="hidden p-2.5 sm:p-3 rounded-xl border text-xs sm:text-sm"></div>
-        <button id="quiz-next-btn" onclick="generateQuizQuestion()" class="hidden w-full py-2.5 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition flex items-center justify-center gap-1.5 active:scale-95">
+        <button id="quiz-next-btn" onclick="generateQuizQuestion()" class="hidden w-full py-2.5 sm:py-3 bg-morandi-sage hover:bg-morandi-sageDark text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition flex items-center justify-center gap-1.5 active:scale-95">
           下一題 <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
     </section>
 
-    <section id="mode-cloze" class="hidden space-y-3 sm:space-y-6 max-w-xl mx-auto w-full">
-      <div class="bg-white p-3.5 sm:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-3 sm:space-y-5">
+    <section id="mode-cloze" class="hidden space-y-3 sm:space-y-6 max-w-xl mx-auto w-full scroll-mt-20">
+      <div class="bg-white p-3.5 sm:p-6 rounded-2xl border border-morandi-sageBorder/50 shadow-xs space-y-3 sm:space-y-5">
         <div class="flex justify-between items-center">
           <div class="flex items-center gap-1.5">
-            <span class="text-[11px] sm:text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">克漏字</span>
-            <span class="text-[11px] sm:text-xs text-slate-400" id="cloze-unit-badge">Unit 1</span>
+            <span class="text-[11px] sm:text-xs font-bold text-morandi-sageDark bg-morandi-sageLight border border-morandi-sageBorder px-2 py-0.5 rounded-md">克漏字</span>
+            <span class="text-[11px] sm:text-xs text-morandi-taupe font-semibold" id="cloze-unit-badge">Unit 1</span>
           </div>
           <div class="flex items-center gap-2 text-xs">
-            <button onclick="toggleClozeInputType()" id="cloze-toggle-type-btn" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-indigo-400 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 text-xs font-bold shadow-sm shadow-indigo-200 transition-all flex items-center gap-1.5 active:scale-95 animate-pulse hover:animate-none">
-              <i class="fa-solid fa-keyboard text-xs text-indigo-100"></i>
+            <button onclick="toggleClozeInputType()" id="cloze-toggle-type-btn" class="px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-morandi-sageBorder bg-morandi-sage text-white hover:bg-morandi-sageDark text-xs font-bold shadow-xs transition-all flex items-center gap-1.5 active:scale-95">
+              <i class="fa-solid fa-keyboard text-xs text-morandi-sageLight"></i>
               <span id="cloze-toggle-text">切換為手動拼字模式</span>
             </button>
           </div>
         </div>
 
-        <!-- Sentence Card with Missing Word -->
-        <div class="p-3 sm:p-5 bg-gradient-to-b from-slate-50 to-white rounded-xl border border-slate-200 space-y-2 sm:space-y-3">
-          <div class="flex items-center justify-between text-[11px] sm:text-xs text-slate-500">
-            <span>根據上下文選出正確單字：</span>
-            <button onclick="speakClozeSentence()" class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-1">
+        <div class="p-3 sm:p-5 bg-gradient-to-b from-morandi-sageLight/30 to-white rounded-xl border border-morandi-sageBorder/60 space-y-2 sm:space-y-3 max-w-full overflow-hidden">
+          <div class="flex items-center justify-between text-[11px] sm:text-xs text-morandi-taupe font-medium">
+            <span id="cloze-question-guide">根據上下文選出正確單字：</span>
+            <button onclick="speakClozeSentence()" class="text-morandi-sageDark hover:text-morandi-sage font-bold flex items-center gap-1 flex-shrink-0">
               <i class="fa-solid fa-volume-high"></i> 朗讀句子
             </button>
           </div>
-          <p id="cloze-sentence-display" class="text-sm sm:text-lg text-slate-800 leading-snug sm:leading-relaxed font-medium">
-            Chloe has always loved the <span class="border-b-2 border-dashed border-blue-500 text-blue-600 font-bold px-1 py-0.5 bg-blue-50 rounded text-xs sm:text-base">______</span> arts, and she wants to be a famous actor one day.
+          <p id="cloze-sentence-display" class="text-sm sm:text-lg text-morandi-charcoal leading-snug sm:leading-relaxed font-semibold break-words">
+            Chloe has always loved the <span class="border-b-2 border-dashed border-morandi-sage text-morandi-sageDark font-bold px-1 py-0.5 bg-morandi-sageLight rounded text-xs sm:text-base">______</span> arts, and she wants to be a famous actor one day.
           </p>
-          <div class="pt-1.5 border-t border-slate-100 flex items-center justify-between text-xs">
-            <span class="text-slate-600 truncate mr-2">提示：<span id="cloze-hint-chinese" class="font-bold text-slate-800">(有關) 戲劇的</span> <span id="cloze-hint-pos" class="text-[11px] text-slate-400 font-mono">(adj.)</span></span>
-            <button onclick="giveClozeLetterHint()" class="text-[11px] text-blue-600 hover:underline flex-shrink-0">首字提示</button>
+          <div class="pt-1.5 border-t border-[#eeebe5] flex items-center justify-between text-xs min-h-[32px]">
+            <div class="flex items-center gap-1.5 min-w-0">
+              <button id="cloze-def-hint-btn" onclick="revealClozeChineseHint()" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-morandi-sageLight text-morandi-sageDark hover:bg-[#dfe7e0] border border-morandi-sageBorder text-[11px] font-bold transition active:scale-95">
+                <i class="fa-regular fa-lightbulb text-morandi-clay"></i>
+                <span>查看中文提示</span>
+              </button>
+              <div id="cloze-def-hint-content" class="hidden text-morandi-charcoal truncate">
+                提示：<span id="cloze-hint-chinese" class="font-bold text-morandi-charcoal"></span> <span id="cloze-hint-pos" class="text-[11px] text-morandi-taupe font-mono"></span>
+              </div>
+            </div>
+
+            <button id="cloze-first-letter-btn" onclick="giveClozeLetterHint()" class="hidden text-[11px] text-morandi-sageDark hover:underline font-bold flex-shrink-0">
+              <i class="fa-solid fa-key mr-0.5 text-morandi-clay"></i>首字提示
+            </button>
           </div>
         </div>
 
-        <!-- Choice Mode Options (2x2 on mobile for height saving) -->
-        <div id="cloze-choice-area" class="grid grid-cols-2 gap-2">
-          <!-- Populated by JS -->
-        </div>
+        <div id="cloze-choice-area" class="grid grid-cols-2 gap-2"></div>
 
-        <!-- Typing Mode Input -->
-        <div id="cloze-type-area" class="hidden space-y-2">
-          <form onsubmit="event.preventDefault(); checkTypedClozeAnswer();" class="flex gap-1.5">
-            <input type="text" id="cloze-input-word" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="輸入英文單字..." class="flex-1 p-2 sm:p-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium text-xs sm:text-sm">
-            <button type="submit" class="px-4 py-2 sm:py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition text-xs sm:text-sm active:scale-95 flex-shrink-0">送出</button>
+        <div id="cloze-type-area" class="hidden space-y-2 max-w-full">
+          <form onsubmit="event.preventDefault(); checkTypedClozeAnswer();" class="w-full flex items-center gap-1.5">
+            <div class="relative flex-1 min-w-0">
+              <input type="text" id="cloze-input-word" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="go" placeholder="輸入英文單字..." class="w-full p-2.5 sm:p-3 bg-morandi-sageLight/40 focus:bg-white border border-morandi-sageBorder rounded-xl focus:ring-2 focus:ring-morandi-sage focus:outline-none font-semibold text-morandi-charcoal transition">
+            </div>
+            <button type="submit" class="px-4 py-2.5 sm:py-3 bg-morandi-sage hover:bg-morandi-sageDark active:bg-morandi-sageDark text-white font-bold rounded-xl transition text-sm flex-shrink-0 flex items-center gap-1 shadow-xs">
+              <span>送出</span>
+              <i class="fa-solid fa-paper-plane text-xs"></i>
+            </button>
           </form>
-          <div id="cloze-type-hint" class="text-[11px] text-slate-400"></div>
+          <div id="cloze-type-hint" class="hidden text-xs sm:text-sm font-medium px-3 py-2 rounded-xl bg-morandi-clayLight border border-morandi-clayBorder text-morandi-clay flex items-center gap-2 shadow-xs transition-all"></div>
         </div>
 
-        <!-- Feedback & Next Button -->
         <div id="cloze-feedback-box" class="hidden p-2.5 sm:p-3 rounded-xl border text-xs sm:text-sm"></div>
-        <button id="cloze-next-btn" onclick="nextClozeQuestion()" class="hidden w-full py-2.5 sm:py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition flex items-center justify-center gap-1.5 active:scale-95">
+        <button id="cloze-next-btn" onclick="nextClozeQuestion()" class="hidden w-full py-2.5 sm:py-3 bg-morandi-sage hover:bg-morandi-sageDark text-white font-bold text-xs sm:text-sm rounded-xl shadow-xs transition flex items-center justify-center gap-1.5 active:scale-95">
           下一題 <i class="fa-solid fa-arrow-right"></i>
         </button>
       </div>
     </section>
 
     <section id="mode-list" class="hidden space-y-3 sm:space-y-4">
-      <div class="bg-white p-3 sm:p-6 rounded-2xl border border-slate-200 shadow-xs space-y-3">
-        <!-- Search & Filter Header -->
-        <div class="flex flex-col sm:flex-row gap-2.5 items-center justify-between">
-          <div class="relative w-full sm:w-80">
-            <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-slate-400 text-xs"></i>
-            <input type="text" id="list-search-input" oninput="renderWordTable()" placeholder="搜尋英文、中文或單元..." class="w-full pl-8 pr-3 py-1.5 text-xs sm:text-sm border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:outline-none">
+      <div class="bg-white p-3.5 sm:p-6 rounded-2xl border border-morandi-sageBorder/50 shadow-xs space-y-4">
+        
+        <div class="flex flex-col md:flex-row gap-2.5 items-stretch md:items-center justify-between">
+          <div class="flex items-center gap-2 flex-1">
+            <div class="relative w-full max-w-md">
+              <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-morandi-taupe text-xs"></i>
+              <input type="text" id="list-search-input" oninput="renderWordTable()" placeholder="搜尋英文、中文、詞性或單元..." class="w-full pl-8 pr-3 py-1.5 text-xs sm:text-sm border border-morandi-sageBorder rounded-xl focus:ring-2 focus:ring-morandi-sage focus:outline-none">
+            </div>
           </div>
-          <div class="flex items-center gap-2 w-full sm:w-auto justify-between sm:justify-end text-[11px] sm:text-xs text-slate-500">
-            <span>共 <strong id="list-total-count" class="text-slate-800">132</strong> 字</span>
-            <button onclick="exportStarredList()" class="px-2.5 py-1 rounded-lg border border-slate-200 hover:bg-slate-50 text-slate-700 font-medium">
-              <i class="fa-solid fa-download mr-1"></i>匯出星號
+
+          <div class="flex items-center gap-2 justify-between md:justify-end text-xs text-morandi-taupe">
+            <span class="font-semibold whitespace-nowrap">
+              目前顯示：<strong id="list-total-count" class="text-morandi-sageDark font-bold">132</strong> 字
+            </span>
+            <button onclick="exportStarredList()" class="px-3 py-1.5 rounded-xl border border-morandi-clayBorder bg-morandi-clayLight hover:bg-[#f2e7e3] text-morandi-clay font-bold transition flex items-center gap-1 active:scale-95">
+              <i class="fa-solid fa-download text-xs"></i> 匯出星號
             </button>
           </div>
         </div>
 
-        <!-- Word Table / Cards List -->
-        <div class="overflow-x-auto">
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1.5 pt-0.5 text-xs">
+          <span class="text-morandi-taupe font-semibold whitespace-nowrap text-[11px] mr-1">單元快速篩選:</span>
+          <button onclick="setListUnitFilter('ALL')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-bold text-xs whitespace-nowrap transition bg-morandi-sage text-white border-morandi-sage" data-unit="ALL">全部單元</button>
+          <button onclick="setListUnitFilter('Unit 1')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 1">Unit 1</button>
+          <button onclick="setListUnitFilter('Unit 2')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 2">Unit 2</button>
+          <button onclick="setListUnitFilter('Unit 3')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 3">Unit 3</button>
+          <button onclick="setListUnitFilter('Unit 4')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 4">Unit 4</button>
+          <button onclick="setListUnitFilter('Unit 5')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 5">Unit 5</button>
+          <button onclick="setListUnitFilter('Unit 6')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 6">Unit 6</button>
+          <button onclick="setListUnitFilter('Unit 7')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 7">Unit 7</button>
+          <button onclick="setListUnitFilter('Unit 8')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 8">Unit 8</button>
+          <button onclick="setListUnitFilter('Unit 9')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 9">Unit 9</button>
+          <button onclick="setListUnitFilter('Unit 10')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 10">Unit 10</button>
+          <button onclick="setListUnitFilter('Unit 11')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 11">Unit 11</button>
+          <button onclick="setListUnitFilter('Unit 12')" class="list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight" data-unit="Unit 12">Unit 12</button>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-morandi-sageBorder/60">
           <table class="w-full text-left text-xs sm:text-sm border-collapse">
             <thead>
-              <tr class="border-b border-slate-200 text-slate-400 text-[11px] font-bold uppercase tracking-wider bg-slate-50">
-                <th class="py-2 px-2 w-8 text-center">⭐</th>
-                <th class="py-2 px-2">單字 / 音標</th>
-                <th class="py-2 px-2 w-12">詞性</th>
-                <th class="py-2 px-2">中文釋義</th>
-                <th class="py-2 px-2 hidden md:table-cell">實用例句</th>
-                <th class="py-2 px-2 w-12 text-center">發音</th>
+              <tr class="border-b border-morandi-sageBorder/50 text-morandi-taupe text-[11px] font-bold uppercase tracking-wider bg-morandi-sageLight/60">
+                <th class="py-2.5 px-2 w-8 text-center">⭐</th>
+                <th class="py-2.5 px-3">單字 / 音標</th>
+                <th class="py-2.5 px-2 w-14">詞性</th>
+                <th class="py-2.5 px-3">中文釋義</th>
+                <th class="py-2.5 px-3 hidden md:table-cell">教材例句</th>
+                <th class="py-2.5 px-2 w-12 text-center">發音</th>
               </tr>
             </thead>
-            <tbody id="vocab-table-body" class="divide-y divide-slate-100">
-              <!-- Rendered via JS -->
-            </tbody>
+            <tbody id="vocab-table-body" class="divide-y divide-[#eeebe5]"></tbody>
           </table>
         </div>
       </div>
@@ -413,13 +465,17 @@
 
   </main>
 
-  <div id="toast" class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-slate-900 text-white px-3.5 py-2 sm:px-4 sm:py-3 rounded-xl shadow-xl flex items-center gap-2 text-xs sm:text-sm max-w-[90vw]">
-    <i class="fa-solid fa-circle-check text-emerald-400 text-sm" id="toast-icon"></i>
-    <span id="toast-msg">操作成功</span>
+  <footer class="mt-auto py-4 text-center text-xs text-morandi-taupe border-t border-morandi-sageBorder/30">
+    單字小樹苗 · English 4U 九月號核心教材庫 (Unit 1~12 共 132 單字)
+  </footer>
+
+  <div id="toast" class="fixed bottom-5 left-1/2 -translate-x-1/2 bg-morandi-charcoal text-white text-xs sm:text-sm py-2 px-4 rounded-xl shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50 flex items-center gap-2">
+    <span id="toast-message">提示訊息</span>
   </div>
 
   <script>
     const VOCABULARY_DATA = [
+      // Unit 1 (12 words)
       { id: 1, unit: "Unit 1", word: "dramatic", phonetic: "[ drə'mætɪk ]", pos: "adj.", def: "(有關) 戲劇的", sentence: "Chloe has always loved the dramatic arts, and she wants to be a famous actor one day.", target: "dramatic" },
       { id: 2, unit: "Unit 1", word: "performance", phonetic: "[ pɚ'fɔrməns ]", pos: "n.", def: "表演", sentence: "Everyone agreed that last night's performance of Romeo and Juliet was the theater's best yet.", target: "performance" },
       { id: 3, unit: "Unit 1", word: "dialogue", phonetic: "[ 'daɪəˌlɔg ]", pos: "n.", def: "(戲劇、書本或電影中的) 對話，對白", sentence: "Many people love this play because of the wonderful dialogue between its characters. Their conversations are full of clever jokes.", target: "dialogue" },
@@ -431,13 +487,13 @@
       { id: 9, unit: "Unit 1", word: "emotionally", phonetic: "[ ɪ'moʃənəlɪ ]", pos: "adv.", def: "情感上地；情緒上地", sentence: "When Alex broke up with his girlfriend, it was very painful for him emotionally. He couldn't stop crying.", target: "emotionally" },
       { id: 10, unit: "Unit 1", word: "audience", phonetic: "[ 'ɔdɪəns ]", pos: "n.", def: "觀眾；聽眾", sentence: "The band played all their famous songs and really pleased the audience.", target: "audience" },
       { id: 11, unit: "Unit 1", word: "varied", phonetic: "[ 'vɛrɪd ]", pos: "adj.", def: "各式各樣的；有變化的", sentence: "The city has a varied population. People from many countries and cultures live there.", target: "varied" },
-      
-      { id: 12, unit: "Unit 1, 2", word: "purpose", phonetic: "[ 'pɝpəs ]", pos: "n.", def: "目的；意圖；用途", sentence: "The purpose of this event is to raise money and provide food for people in need.", target: "purpose" },
-      { id: 13, unit: "Unit 1, 2", word: "buzz", phonetic: "[ bʌz ]", pos: "v.", def: "快速移動", sentence: "My friends and I buzzed around the school library and looked for books we needed.", target: "buzzed" },
-      { id: 14, unit: "Unit 1, 2", word: "convenience", phonetic: "[ kən'vinjəns ]", pos: "n.", def: "便利(性)", sentence: "I love online shopping for its convenience—I can buy things at home without going to the store.", target: "convenience" },
-      { id: 15, unit: "Unit 1, 2", word: "stuck", phonetic: "[ stʌk ]", pos: "adj.", def: "卡住的；動不了的", sentence: "Emma's kite got stuck in a tree, and she couldn't reach it to get it down.", target: "stuck" },
+      { id: 12, unit: "Unit 1", word: "purpose", phonetic: "[ 'pɝpəs ]", pos: "n.", def: "目的；意圖；用途", sentence: "The purpose of this event is to raise money and provide food for people in need.", target: "purpose" },
 
-      { id: 16, unit: "Unit 2", word: "weave", phonetic: "[ wiv ]", pos: "v.", def: "穿梭", sentence: "Hudson weaved through the crowded market and stepped from side to side to avoid people in his path.", target: "weaved" },
+      // Unit 2 (12 words)
+      { id: 13, unit: "Unit 2", word: "buzz", phonetic: "[ bʌz ]", pos: "v.", def: "快速移動", sentence: "My friends and I buzzed around the school library and looked for books we needed.", target: "buzzed" },
+      { id: 14, unit: "Unit 2", word: "convenience", phonetic: "[ kən'vinjəns ]", pos: "n.", def: "便利(性)", sentence: "I love online shopping for its convenience—I can buy things at home without going to the store.", target: "convenience" },
+      { id: 15, unit: "Unit 2", word: "stuck", phonetic: "[ stʌk ]", pos: "adj.", def: "卡住的；動不了的", sentence: "Emma's kite got stuck in a tree, and she couldn't reach it to get it down.", target: "stuck" },
+      { id: 16, unit: "Unit 2", word: "weave", phonetic: "[ wiv ]", pos: "v.", def: "穿梭 (動詞三態: weave-weaved-weaved)", sentence: "Hudson weaved through the crowded market and stepped from side to side to avoid people in his path.", target: "weaved" },
       { id: 17, unit: "Unit 2", word: "affordable", phonetic: "[ ə'fɔrdəbl ]", pos: "adj.", def: "負擔得起的", sentence: "This car seems to be the most affordable choice. The bigger one is too expensive for us.", target: "affordable" },
       { id: 18, unit: "Unit 2", word: "vehicle", phonetic: "[ 'viək ]", pos: "n.", def: "交通工具；(尤指) 車輛", sentence: "A truck is a big vehicle that is used to carry heavy things from one place to another.", target: "vehicle" },
       { id: 19, unit: "Unit 2", word: "import", phonetic: "[ ɪm'pɔrt ]", pos: "v.", def: "進口；輸入", sentence: "Phil's company imports clothing from other countries to be sold here.", target: "imports" },
@@ -445,12 +501,12 @@
       { id: 21, unit: "Unit 2", word: "replace", phonetic: "[ rɪ'ples ]", pos: "v.", def: "代替；取代", sentence: "The new shopping mall was built to replace the old market because of safety concerns.", target: "replace" },
       { id: 22, unit: "Unit 2", word: "environmental", phonetic: "[ ɪnˌvaɪrən'mɛntḷ ]", pos: "adj.", def: "環境保護的", sentence: "The news talked about an environmental project that cleans rivers and protects animals.", target: "environmental" },
       { id: 23, unit: "Unit 2", word: "technology", phonetic: "[ tɛk'nɑlədʒɪ ]", pos: "n.", def: "科技", sentence: "Thanks to technology, Nora can talk to her cousin in Canada through a video call.", target: "technology" },
+      { id: 24, unit: "Unit 2", word: "brand", phonetic: "[ brænd ]", pos: "n.", def: "品牌", sentence: "Levi's is a world-famous jeans brand that has been around for over 100 years.", target: "brand" },
 
-      { id: 24, unit: "Unit 2, 3", word: "brand", phonetic: "[ brænd ]", pos: "n.", def: "品牌", sentence: "Levi's is a world-famous jeans brand that has been around for over 100 years.", target: "brand" },
-      { id: 25, unit: "Unit 2, 3", word: "poster", phonetic: "[ 'postɚ ]", pos: "n.", def: "海報", sentence: "A big movie poster on the theater wall made Rita want to watch the new film.", target: "poster" },
-      { id: 26, unit: "Unit 2, 3", word: "amazing", phonetic: "[ ə'mezɪŋ ]", pos: "adj.", def: "令人驚奇的", sentence: "The cake looked amazing with beautiful flowers on top, so everyone took photos of it.", target: "amazing" },
-      { id: 27, unit: "Unit 2, 3", word: "colorful", phonetic: "[ 'kʌlɚfəl ]", pos: "adj.", def: "色彩鮮豔的；五顏六色的", sentence: "Kristin likes colorful clothes. You can often see her wearing orange, yellow, and pink.", target: "colorful" },
-
+      // Unit 3 (12 words)
+      { id: 25, unit: "Unit 3", word: "poster", phonetic: "[ 'postɚ ]", pos: "n.", def: "海報", sentence: "A big movie poster on the theater wall made Rita want to watch the new film.", target: "poster" },
+      { id: 26, unit: "Unit 3", word: "amazing", phonetic: "[ ə'mezɪŋ ]", pos: "adj.", def: "令人驚奇的", sentence: "The cake looked amazing with beautiful flowers on top, so everyone took photos of it.", target: "amazing" },
+      { id: 27, unit: "Unit 3", word: "colorful", phonetic: "[ 'kʌlɚfəl ]", pos: "adj.", def: "色彩鮮豔的；五顏六色的", sentence: "Kristin likes colorful clothes. You can often see her wearing orange, yellow, and pink.", target: "colorful" },
       { id: 28, unit: "Unit 3", word: "task", phonetic: "[ tæsk ]", pos: "n.", def: "工作；差事", sentence: "Cleaning the kitchen floor is a simple task, but it takes time and effort.", target: "task" },
       { id: 29, unit: "Unit 3", word: "budget", phonetic: "[ 'bʌdʒɪt ]", pos: "n.", def: "預算", sentence: "Maggie wants to buy a new car, but her budget is quite small: only NT$90,000.", target: "budget" },
       { id: 30, unit: "Unit 3", word: "project", phonetic: "[ 'prɑdʒɛkt ]", pos: "n.", def: "專案；計畫", sentence: "Our class project this semester is to build a small garden next to our classroom.", target: "project" },
@@ -459,17 +515,18 @@
       { id: 33, unit: "Unit 3", word: "admire", phonetic: "[ æd'maɪr ]", pos: "v.", def: "欣賞", sentence: "Julia had a good afternoon walking around the museum and admiring the art.", target: "admiring" },
       { id: 34, unit: "Unit 3", word: "completely", phonetic: "[ kəm'plitlɪ ]", pos: "adv.", def: "完全地；徹底地", sentence: "After Sally finished that big plate of noodles, she was completely full.", target: "completely" },
       { id: 35, unit: "Unit 3", word: "impressed", phonetic: "[ ɪm'prɛst ]", pos: "adj.", def: "感到印象深刻的；欽佩的", sentence: "I was really impressed when I heard that Elisa had won the 100-meter race.", target: "impressed" },
+      { id: 36, unit: "Unit 3", word: "grab", phonetic: "[ græb ]", pos: "v.", def: "取得；拿取", sentence: "Wyatt forgot to grab his cellphone from the table this morning because he was in such a hurry.", target: "grab" },
 
-      { id: 36, unit: "Unit 3, 4", word: "grab", phonetic: "[ græb ]", pos: "v.", def: "取得；拿取", sentence: "Wyatt forgot to grab his cellphone from the table this morning because he was in such a hurry.", target: "grab" },
-      { id: 37, unit: "Unit 3, 4", word: "statement", phonetic: "[ 'stetmənt ]", pos: "n.", def: "說法；陳述", sentence: "The teacher asked each student to write a statement to express their opinion on the topic.", target: "statement" },
-      { id: 38, unit: "Unit 3, 4", word: "judge", phonetic: "[ dʒʌdʒ ]", pos: "v.", def: "評斷；批評", sentence: "It is not fair to judge people before you get to know them.", target: "judge" },
-      { id: 39, unit: "Unit 3, 4", word: "refuse", phonetic: "[ rɪ'fjuz ]", pos: "v.", def: "拒絕", sentence: "Noah refused to lend his car to his girlfriend because he needed it for work.", target: "refused" },
+      // Unit 4 (6 words)
+      { id: 37, unit: "Unit 4", word: "statement", phonetic: "[ 'stetmənt ]", pos: "n.", def: "說法；陳述", sentence: "The teacher asked each student to write a statement to express their opinion on the topic.", target: "statement" },
+      { id: 38, unit: "Unit 4", word: "judge", phonetic: "[ dʒʌdʒ ]", pos: "v.", def: "評斷；批評", sentence: "It is not fair to judge people before you get to know them.", target: "judge" },
+      { id: 39, unit: "Unit 4", word: "refuse", phonetic: "[ rɪ'fjuz ]", pos: "v.", def: "拒絕", sentence: "Noah refused to lend his car to his girlfriend because he needed it for work.", target: "refused" },
+      { id: 40, unit: "Unit 4", word: "worth", phonetic: "[ wɝθ ]", pos: "adj.", def: "有...價值的", sentence: "Brandon's hard work is worth a lot because it helps the whole team get an A.", target: "worth" },
+      { id: 41, unit: "Unit 4", word: "label", phonetic: "[ 'lebḷ ]", pos: "n.", def: "(尤指不夠公正或完全屬實的) 稱號，標籤", sentence: "Don't put the label of 'weak' on someone just because they are small.", target: "label" },
+      { id: 42, unit: "Unit 4", word: "individual", phonetic: "[ ˌɪndə'vɪdʒʊəl ]", pos: "n.", def: "獨立個體", sentence: "Each individual in the class has different interests, needs, and learning habits.", target: "individual" },
 
-      { id: 40, unit: "Unit 4, 5", word: "worth", phonetic: "[ wɝθ ]", pos: "adj.", def: "有...價值的", sentence: "Brandon's hard work is worth a lot because it helps the whole team get an A.", target: "worth" },
-      { id: 41, unit: "Unit 4, 5", word: "label", phonetic: "[ 'lebḷ ]", pos: "n.", def: "(尤指不夠公正或屬實的) 稱號，標籤", sentence: "Don't put the label of 'weak' on someone just because they are small.", target: "label" },
-      { id: 42, unit: "Unit 4, 5", word: "individual", phonetic: "[ ˌɪndə'vɪdʒʊəl ]", pos: "n.", def: "獨立個體", sentence: "Each individual in the class has different interests, needs, and learning habits.", target: "individual" },
-      { id: 43, unit: "Unit 4, 5", word: "graduate", phonetic: "[ 'grædʒuɪt ]", pos: "n.", def: "畢業生", sentence: "As a graduate from a top university, Hans had several job offers from big companies.", target: "graduate" },
-
+      // Unit 5 (12 words)
+      { id: 43, unit: "Unit 5", word: "graduate", phonetic: "[ 'grædʒuɪt ]", pos: "n.", def: "畢業生", sentence: "As a graduate from a top university, Hans had several job offers from big companies.", target: "graduate" },
       { id: 44, unit: "Unit 5", word: "forced", phonetic: "[ fɔrst ]", pos: "adj.", def: "被迫的；強迫的", sentence: "Aria didn't like the gift, but she gave a forced smile to be polite.", target: "forced" },
       { id: 45, unit: "Unit 5", word: "path", phonetic: "[ pæθ ]", pos: "n.", def: "(人生的) 軌跡，發展路線", sentence: "Anna's teacher helped her find the right path to a good job after college.", target: "path" },
       { id: 46, unit: "Unit 5", word: "theory", phonetic: "[ 'θiərɪ ]", pos: "n.", def: "學說；理論", sentence: "The science team proposed a theory but lacked the necessary data to fully support it.", target: "theory" },
@@ -478,12 +535,12 @@
       { id: 49, unit: "Unit 5", word: "monthly", phonetic: "[ 'mʌnθlɪ ]", pos: "adj.", def: "每月的；一個月的", sentence: "Eric has a monthly dinner with his grandmother. He chooses one weekend for it before the next month begins.", target: "monthly" },
       { id: 50, unit: "Unit 5", word: "salary", phonetic: "[ 'sælərɪ ]", pos: "n.", def: "薪水", sentence: "Nina checks her salary carefully because she just got a pay raise.", target: "salary" },
       { id: 51, unit: "Unit 5", word: "employee", phonetic: "[ ɪm'plɔɪ'i ]", pos: "n.", def: "員工；受雇者", sentence: "Because of Nathan's hard work, he was voted the company's best employee last month.", target: "employee" },
+      { id: 52, unit: "Unit 5", word: "further", phonetic: "[ 'fɝðɚ ]", pos: "adj.", def: "更多的；更進一步的", sentence: "The manager will share further information about the new work schedule tomorrow morning.", target: "further" },
+      { id: 53, unit: "Unit 5", word: "apply", phonetic: "[ ə'plaɪ ]", pos: "v.", def: "申請", sentence: "Dennis applied to several colleges around Taiwan, and he is waiting to see which ones accept him.", target: "applied" },
+      { id: 54, unit: "Unit 5", word: "attitude", phonetic: "[ 'ætəˌtjud ]", pos: "n.", def: "態度；看法；心態", sentence: "Michael showed a rude attitude when he shouted at his teacher and walked away.", target: "attitude" },
 
-      { id: 52, unit: "Unit 5, 6", word: "further", phonetic: "[ 'fɝðɚ ]", pos: "adj.", def: "更多的；更進一步的", sentence: "The manager will share further information about the new work schedule tomorrow morning.", target: "further" },
-      { id: 53, unit: "Unit 5, 6", word: "apply", phonetic: "[ ə'plaɪ ]", pos: "v.", def: "申請", sentence: "Dennis applied to several colleges around Taiwan, and he is waiting to see which ones accept him.", target: "applied" },
-      { id: 54, unit: "Unit 5, 6", word: "attitude", phonetic: "[ 'ætəˌtjud ]", pos: "n.", def: "態度；看法；心態", sentence: "Michael showed a rude attitude when he shouted at his teacher and walked away.", target: "attitude" },
-      { id: 55, unit: "Unit 5, 6", word: "collection", phonetic: "[ kə'lɛkʃən ]", pos: "n.", def: "故事集；文集", sentence: "This book is a collection of ten short stories about animals and families.", target: "collection" },
-
+      // Unit 6 (12 words)
+      { id: 55, unit: "Unit 6", word: "collection", phonetic: "[ kə'lɛkʃən ]", pos: "n.", def: "故事集；文集", sentence: "This book is a collection of ten short stories about animals and families.", target: "collection" },
       { id: 56, unit: "Unit 6", word: "murder", phonetic: "[ 'mɝdɚ ]", pos: "n.", def: "謀殺", sentence: "Helen heard about the murder on the news and was worried about safety in her town.", target: "murder" },
       { id: 57, unit: "Unit 6", word: "remote", phonetic: "[ rɪ'mot ]", pos: "adj.", def: "偏遠的", sentence: "Liam's family lives in a remote mountain area far from any city.", target: "remote" },
       { id: 58, unit: "Unit 6", word: "elderly", phonetic: "[ 'ɛldɚlɪ ]", pos: "adj.", def: "上了年紀的；年老的", sentence: "At 90 years old, Betty moved out of her house and into a care home for elderly people.", target: "elderly" },
@@ -492,22 +549,22 @@
       { id: 61, unit: "Unit 6", word: "missing", phonetic: "[ 'mɪsɪŋ ]", pos: "adj.", def: "找不到的；失蹤的", sentence: "The police officers are looking for a missing child who disappeared two days ago.", target: "missing" },
       { id: 62, unit: "Unit 6", word: "citizen", phonetic: "[ 'sɪtəzn ]", pos: "n.", def: "國民；公民；市民", sentence: "Gary moved to Canada last year, but he can't vote there because he's not a citizen yet.", target: "citizen" },
       { id: 63, unit: "Unit 6", word: "claim", phonetic: "[ klem ]", pos: "v.", def: "聲稱；主張", sentence: "Marty claims that his uncle is a famous actor, but no one believes him because he often tells lies.", target: "claims" },
+      { id: 64, unit: "Unit 6", word: "suggest", phonetic: "[ sə'dʒɛst ]", pos: "v.", def: "顯示；暗示", sentence: "The boss's tone of voice suggests that he's not pleased with the recent drop in sales numbers.", target: "suggests" },
+      { id: 65, unit: "Unit 6", word: "suspect", phonetic: "[ sə'spɛkt ]", pos: "v.", def: "懷疑...有問題", sentence: "The teacher suspects Miles of cheating because his answers look exactly like Quinn's.", target: "suspects" },
+      { id: 66, unit: "Unit 6", word: "vanish", phonetic: "[ 'vænɪʃ ]", pos: "v.", def: "(尤指突然) 消失", sentence: "A rat ran by Judy and vanished under the sofa; it didn't come out again.", target: "vanished" },
 
-      { id: 64, unit: "Unit 6, 7", word: "suggest", phonetic: "[ sə'dʒɛst ]", pos: "v.", def: "顯示；暗示", sentence: "The boss's tone of voice suggests that he's not pleased with the recent drop in sales numbers.", target: "suggests" },
-      { id: 65, unit: "Unit 6, 7", word: "suspect", phonetic: "[ sə'spɛkt ]", pos: "v.", def: "懷疑...有問題", sentence: "The teacher suspects Miles of cheating because his answers look exactly like Quinn's.", target: "suspects" },
-      { id: 66, unit: "Unit 6, 7", word: "vanish", phonetic: "[ 'vænɪʃ ]", pos: "v.", def: "(尤指突然) 消失", sentence: "A rat ran by Judy and vanished under the sofa; it didn't come out again.", target: "vanished" },
-      { id: 67, unit: "Unit 6, 7", word: "text", phonetic: "[ tɛkst ]", pos: "n.", def: "文字", sentence: "Larry got coffee on his newspaper, and now some of the text is hard to read.", target: "text" },
-
+      // Unit 7 (6 words)
+      { id: 67, unit: "Unit 7", word: "text", phonetic: "[ tɛkst ]", pos: "n.", def: "文字", sentence: "Larry got coffee on his newspaper, and now some of the text is hard to read.", target: "text" },
       { id: 68, unit: "Unit 7", word: "emotional", phonetic: "[ ɪ'moʃənḷ ]", pos: "adj.", def: "激起強烈情感的", sentence: "The teacher gave an emotional goodbye message, and several students started crying.", target: "emotional" },
       { id: 69, unit: "Unit 7", word: "expression", phonetic: "[ ɪk'sprɛʃən ]", pos: "n.", def: "表情；神色", sentence: "Leo had a shocked expression on his face when he found out Nina had cheated on the test.", target: "expression" },
       { id: 70, unit: "Unit 7", word: "reality", phonetic: "[ rɪ'ælətɪ ]", pos: "n.", def: "現實；真實", sentence: "Tate's dream is to be a singer, but the reality is very different. He now works in an office every day.", target: "reality" },
       { id: 71, unit: "Unit 7", word: "humor", phonetic: "[ 'hjumɚ ]", pos: "n.", def: "幽默", sentence: "This crime show is dark and scary sometimes, but it also uses humor to make things seem less serious.", target: "humor" },
+      { id: 72, unit: "Unit 7", word: "horror", phonetic: "[ 'hɔrɚ ]", pos: "n.", def: "恐怖；恐懼", sentence: "Ava loves horror games because the dark rooms and strange sounds make every moment exciting.", target: "horror" },
 
-      { id: 72, unit: "Unit 7, 8", word: "horror", phonetic: "[ 'hɔrɚ ]", pos: "n.", def: "恐怖；恐懼", sentence: "Ava loves horror games because the dark rooms and strange sounds make every moment exciting.", target: "horror" },
-      { id: 73, unit: "Unit 7, 8", word: "surface", phonetic: "[ 'sɝfɪs ]", pos: "n.", def: "表面", sentence: "The surface of the new phone feels smooth and cold.", target: "surface" },
-      { id: 74, unit: "Unit 7, 8", word: "dirt", phonetic: "[ dɝt ]", pos: "n.", def: "灰塵；塵垢", sentence: "Amy's son came home from school covered in dirt. He said he'd been helping plant flowers in the school's garden.", target: "dirt" },
-      { id: 75, unit: "Unit 7, 8", word: "stubborn", phonetic: "[ 'stʌbɚn ]", pos: "adj.", def: "難以去除的；頑強的", sentence: "The kitchen now has a stubborn smell after Ben cooked fish for dinner last night.", target: "stubborn" },
-
+      // Unit 8 (12 words)
+      { id: 73, unit: "Unit 8", word: "surface", phonetic: "[ 'sɝfɪs ]", pos: "n.", def: "表面", sentence: "The surface of the new phone feels smooth and cold.", target: "surface" },
+      { id: 74, unit: "Unit 8", word: "dirt", phonetic: "[ dɝt ]", pos: "n.", def: "灰塵；塵垢", sentence: "Amy's son came home from school covered in dirt. He said he'd been helping plant flowers in the school's garden.", target: "dirt" },
+      { id: 75, unit: "Unit 8", word: "stubborn", phonetic: "[ 'stʌbɚn ]", pos: "adj.", def: "難以去除的；頑強的", sentence: "The kitchen now has a stubborn smell after Ben cooked fish for dinner last night.", target: "stubborn" },
       { id: 76, unit: "Unit 8", word: "wipe", phonetic: "[ waɪp ]", pos: "n.", def: "擦拭；擦淨", sentence: "Mason gave his glasses a quick wipe with his shirt.", target: "wipe" },
       { id: 77, unit: "Unit 8", word: "firm", phonetic: "[ fɝm ]", pos: "adj.", def: "結實的；堅實的", sentence: "Rosie likes firm pillows because they support her neck while she sleeps.", target: "firm" },
       { id: 78, unit: "Unit 8", word: "handy", phonetic: "[ 'hændɪ ]", pos: "adj.", def: "方便的；有用的", sentence: "This handy bottle opener helps Fred open drinks quickly.", target: "handy" },
@@ -516,17 +573,18 @@
       { id: 81, unit: "Unit 8", word: "shiny", phonetic: "[ 'ʃaɪnɪ ]", pos: "adj.", def: "(表面) 發亮的，有光澤的", sentence: "That car's paint is so black and shiny. It's like looking into a black mirror!", target: "shiny" },
       { id: 82, unit: "Unit 8", word: "advisable", phonetic: "[ əd'vaɪzəbl ]", pos: "adj.", def: "明智的", sentence: "Early booking is advisable if you want a good seat on the train.", target: "advisable" },
       { id: 83, unit: "Unit 8", word: "gradually", phonetic: "[ 'grædʒuəlɪ ]", pos: "adv.", def: "逐漸地", sentence: "You should start with a few minutes of exercise, and then gradually add more time every day.", target: "gradually" },
+      { id: 84, unit: "Unit 8", word: "harmful", phonetic: "[ 'hɑrmfəl ]", pos: "adj.", def: "有害的", sentence: "You shouldn't have fast food too often. It is harmful to your body because it usually has too much salt and sugar.", target: "harmful" },
 
-      { id: 84, unit: "Unit 8, 9", word: "harmful", phonetic: "[ 'hɑrmfəl ]", pos: "adj.", def: "有害的", sentence: "You shouldn't have fast food too often. It is harmful to your body because it usually has too much salt and sugar.", target: "harmful" },
-      { id: 85, unit: "Unit 8, 9", word: "concert", phonetic: "[ 'kɑnsɚt ]", pos: "n.", def: "音樂會；演唱會", sentence: "Olivia clapped loudly at the concert when the band finished playing.", target: "concert" },
-      { id: 86, unit: "Unit 8, 9", word: "engagement", phonetic: "[ ɪn'gedʒmənt ]", pos: "n.", def: "參與；投入", sentence: "Esme's engagement in the project—asking questions and sharing ideas—helped the team work better.", target: "engagement" },
-      { id: 87, unit: "Unit 8, 9", word: "mental", phonetic: "[ 'mɛntḷ ]", pos: "adj.", def: "精神的；心理的", sentence: "Lucas wrote a book about his mental illness to describe the daily struggle of feeling sad.", target: "mental" },
+      // Unit 9 (6 words)
+      { id: 85, unit: "Unit 9", word: "concert", phonetic: "[ 'kɑnsɚt ]", pos: "n.", def: "音樂會；演唱會", sentence: "Olivia clapped loudly at the concert when the band finished playing.", target: "concert" },
+      { id: 86, unit: "Unit 9", word: "engagement", phonetic: "[ ɪn'gedʒmənt ]", pos: "n.", def: "參與；投入", sentence: "Esme's engagement in the project—asking questions and sharing ideas—helped the team work better.", target: "engagement" },
+      { id: 87, unit: "Unit 9", word: "mental", phonetic: "[ 'mɛntḷ ]", pos: "adj.", def: "精神的；心理的", sentence: "Lucas wrote a book about his mental illness to describe the daily struggle of feeling sad.", target: "mental" },
+      { id: 88, unit: "Unit 9", word: "effect", phonetic: "[ ɪ'fɛkt ]", pos: "n.", def: "影響", sentence: "Sleeping eight hours every night has a good effect on my health. I have more energy, think clearly, and rarely get sick.", target: "effect" },
+      { id: 89, unit: "Unit 9", word: "stress", phonetic: "[ strɛs ]", pos: "n.", def: "壓力", sentence: "If you are under a lot of stress around exam time, do something fun between your study periods.", target: "stress" },
+      { id: 90, unit: "Unit 9", word: "joyful", phonetic: "[ 'dʒɔɪfəl ]", pos: "adj.", def: "快樂的", sentence: "The wedding was a joyful day. Everyone danced and sang together.", target: "joyful" },
 
-      { id: 88, unit: "Unit 9, 10", word: "effect", phonetic: "[ ɪ'fɛkt ]", pos: "n.", def: "影響", sentence: "Sleeping eight hours every night has a good effect on my health. I have more energy, think clearly, and rarely get sick.", target: "effect" },
-      { id: 89, unit: "Unit 9, 10", word: "stress", phonetic: "[ strɛs ]", pos: "n.", def: "壓力", sentence: "If you are under a lot of stress around exam time, do something fun between your study periods.", target: "stress" },
-      { id: 90, unit: "Unit 9, 10", word: "joyful", phonetic: "[ 'dʒɔɪfəl ]", pos: "adj.", def: "快樂的", sentence: "The wedding was a joyful day. Everyone danced and sang together.", target: "joyful" },
-      { id: 91, unit: "Unit 9, 10", word: "twin", phonetic: "[ twɪn ]", pos: "n.", def: "雙胞胎之一", sentence: "Wendy and Cindy are twins and look so similar that it's hard to tell them apart.", target: "twins" },
-
+      // Unit 10 (12 words)
+      { id: 91, unit: "Unit 10", word: "twin", phonetic: "[ twɪn ]", pos: "n.", def: "雙胞胎之一", sentence: "Wendy and Cindy are twins and look so similar that it's hard to tell them apart.", target: "twins" },
       { id: 92, unit: "Unit 10", word: "heal", phonetic: "[ hil ]", pos: "v.", def: "癒合", sentence: "The doctor told me to keep my knee wound clean and dry to help it heal.", target: "heal" },
       { id: 93, unit: "Unit 10", word: "original", phonetic: "[ ə'rɪdʒənḷ ]", pos: "adj.", def: "原來的；最初的", sentence: "The new phone lasts 36 hours before it needs a charge. That's 50% longer than the original model.", target: "original" },
       { id: 94, unit: "Unit 10", word: "lifetime", phonetic: "[ 'laɪfˌtaɪm ]", pos: "n.", def: "一生", sentence: "In his 70-year lifetime, my father raised a family, started a successful business, and helped many people.", target: "lifetime" },
@@ -535,12 +593,12 @@
       { id: 97, unit: "Unit 10", word: "related", phonetic: "[ rɪ'letɪd ]", pos: "adj.", def: "同源的；屬於同一類的", sentence: "English and German are related; the two languages share many similar words.", target: "related" },
       { id: 98, unit: "Unit 10", word: "assist", phonetic: "[ ə'sɪst ]", pos: "v.", def: "幫助；協助", sentence: "If you need help with setting up your computer, Jason is the perfect guy to assist you.", target: "assist" },
       { id: 99, unit: "Unit 10", word: "grasp", phonetic: "[ græsp ]", pos: "v.", def: "抓住；抓緊", sentence: "The mother grasped her young son's hand to stop him from running around in the store.", target: "grasped" },
+      { id: 100, unit: "Unit 10", word: "prefer", phonetic: "[ prɪ'fɝ ]", pos: "v.", def: "偏愛；偏好", sentence: "Tom prefers the blue shirt, while Ben likes the green one more.", target: "prefers" },
+      { id: 101, unit: "Unit 10", word: "sensitive", phonetic: "[ 'sɛnsətɪv ]", pos: "adj.", def: "敏感的；靈敏的", sentence: "Hazel has a sensitive nose, so she can smell food cooking from very far away.", target: "sensitive" },
+      { id: 102, unit: "Unit 10", word: "inspect", phonetic: "[ ɪn'spɛkt ]", pos: "v.", def: "檢查；審視", sentence: "Health officers inspect restaurant kitchens to make sure the food is safe.", target: "inspect" },
 
-      { id: 100, unit: "Unit 10, 11", word: "prefer", phonetic: "[ prɪ'fɝ ]", pos: "v.", def: "偏愛；偏好", sentence: "Tom prefers the blue shirt, while Ben likes the green one more.", target: "prefers" },
-      { id: 101, unit: "Unit 10, 11", word: "sensitive", phonetic: "[ 'sɛnsətɪv ]", pos: "adj.", def: "敏感的；靈敏的", sentence: "Hazel has a sensitive nose, so she can smell food cooking from very far away.", target: "sensitive" },
-      { id: 102, unit: "Unit 10, 11", word: "inspect", phonetic: "[ ɪn'spɛkt ]", pos: "v.", def: "檢查；審視", sentence: "Health officers inspect restaurant kitchens to make sure the food is safe.", target: "inspect" },
-      { id: 103, unit: "Unit 10, 11", word: "actively", phonetic: "[ 'æktɪvlɪ ]", pos: "adv.", def: "積極地", sentence: "Lucia actively helps in the kitchen every night without anyone asking her to.", target: "actively" },
-
+      // Unit 11 (12 words)
+      { id: 103, unit: "Unit 11", word: "actively", phonetic: "[ 'æktɪvlɪ ]", pos: "adv.", def: "積極地", sentence: "Lucia actively helps in the kitchen every night without anyone asking her to.", target: "actively" },
       { id: 104, unit: "Unit 11", word: "complaint", phonetic: "[ kəm'plent ]", pos: "n.", def: "抱怨；投訴", sentence: "When another worker was rude to Margaret in the meeting, she made a complaint to her boss.", target: "complaint" },
       { id: 105, unit: "Unit 11", word: "frequently", phonetic: "[ 'frikwəntlɪ ]", pos: "adv.", def: "頻繁地；經常地", sentence: "Kevin frequently goes to the gym—about six times a week.", target: "frequently" },
       { id: 106, unit: "Unit 11", word: "appeal", phonetic: "[ ə'pil ]", pos: "n.", def: "吸引力；感染力", sentence: "The bright colors of this new clothing brand have a strong appeal for young adults. The items are selling out in many shops.", target: "appeal" },
@@ -549,16 +607,16 @@
       { id: 109, unit: "Unit 11", word: "disagree", phonetic: "[ ˌdɪsə'gri ]", pos: "v.", def: "不同意", sentence: "Steve wants to watch a horror movie, but Julie disagrees with his choice. She prefers an action movie.", target: "disagrees" },
       { id: 110, unit: "Unit 11", word: "deny", phonetic: "[ dɪ'naɪ ]", pos: "v.", def: "拒絕 (給予某物)", sentence: "A shop may deny service to customers who are rude to workers.", target: "deny" },
       { id: 111, unit: "Unit 11", word: "entry", phonetic: "[ 'ɛntrɪ ]", pos: "n.", def: "進入 (權)", sentence: "A big sign by the door says 'No Entry' to stop people from going in.", target: "Entry" },
+      { id: 112, unit: "Unit 11", word: "contact", phonetic: "[ 'kɑntækt ]", pos: "n.", def: "接觸；來往", sentence: "Many city kids have little contact with farm animals like cows and pigs.", target: "contact" },
+      { id: 113, unit: "Unit 11", word: "weaken", phonetic: "[ 'wikən ]", pos: "v.", def: "削弱", sentence: "Too many lies can weaken a friendship between two people.", target: "weaken" },
+      { id: 114, unit: "Unit 11", word: "patience", phonetic: "[ 'peʃəns ]", pos: "n.", def: "耐心", sentence: "The president left quickly because he didn't have the patience to answer so many questions from the reporters.", target: "patience" },
 
-      { id: 112, unit: "Unit 11, 12", word: "contact", phonetic: "[ 'kɑntækt ]", pos: "n.", def: "接觸；來往", sentence: "Many city kids have little contact with farm animals like cows and pigs.", target: "contact" },
-      { id: 113, unit: "Unit 11, 12", word: "weaken", phonetic: "[ 'wikən ]", pos: "v.", def: "削弱", sentence: "Too many lies can weaken a friendship between two people.", target: "weaken" },
-      { id: 114, unit: "Unit 11, 12", word: "patience", phonetic: "[ 'peʃəns ]", pos: "n.", def: "耐心", sentence: "The president left quickly because he didn't have the patience to answer so many questions from the reporters.", target: "patience" },
-      { id: 115, unit: "Unit 11, 12", word: "nickname", phonetic: "[ 'nɪkˌnem ]", pos: "n.", def: "別名；綽號", sentence: "Samantha got her nickname 'Speedy Sam' because she always runs the fastest in her school races.", target: "nickname" },
-
+      // Unit 12 (18 words)
+      { id: 115, unit: "Unit 12", word: "nickname", phonetic: "[ 'nɪkˌnem ]", pos: "n.", def: "別名；綽號", sentence: "Samantha got her nickname 'Speedy Sam' because she always runs the fastest in her school races.", target: "nickname" },
       { id: 116, unit: "Unit 12", word: "reveal", phonetic: "[ rɪ'vil ]", pos: "v.", def: "揭示；揭露；透露", sentence: "The police officer revealed the name of the thief so that people could report any information about him.", target: "revealed" },
       { id: 117, unit: "Unit 12", word: "republic", phonetic: "[ rɪ'pʌblɪk ]", pos: "n.", def: "共和國", sentence: "Italy no longer had a king after 1946 and became a republic.", target: "republic" },
       { id: 118, unit: "Unit 12", word: "romantic", phonetic: "[ ro'mæntɪk ]", pos: "adj.", def: "浪漫的；充滿感性氛圍的", sentence: "The lake felt romantic in the evening. The moon shone on the water, and stars filled the sky.", target: "romantic" },
-      { id: 119, unit: "Unit 12", word: "bride", phonetic: "[ braɪd ]", pos: "n.", def: "新娘", sentence: "The bride's eyes filled with tears after she listened to her parents' touching speech at her wedding.", target: "bride" },
+      { id: 119, unit: "Unit 12", word: "bride", phonetic: "[ braɪd ]", pos: "n.", def: "新娘", sentence: "The bride's eyes filled with tears after she listened to her parents' touching speech at her wedding.", target: "bride's" },
       { id: 120, unit: "Unit 12", word: "dramatic", phonetic: "[ drə'mætɪk ]", pos: "adj.", def: "引人注目的；戲劇性的", sentence: "Theo made a dramatic announcement that he would quit his job, but he just wanted attention.", target: "dramatic" },
       { id: 121, unit: "Unit 12", word: "breeze", phonetic: "[ briz ]", pos: "n.", def: "微風", sentence: "A fresh breeze blew through the park and moved the yellow leaves on the ground.", target: "breeze" },
       { id: 122, unit: "Unit 12", word: "promote", phonetic: "[ prə'mot ]", pos: "v.", def: "宣傳；推廣", sentence: "The food company gave away free Santa toys to promote its new breakfast cereal during the holiday season.", target: "promote" },
@@ -573,10 +631,10 @@
       { id: 131, unit: "Unit 12", word: "locate", phonetic: "[ lo'ket ]", pos: "v.", def: "使位於...；使座落於...", sentence: "It's easy for me to get to work because my office is located close to an MRT station.", target: "located" },
       { id: 132, unit: "Unit 12", word: "commercial", phonetic: "[ kə'mɝʃəl ]", pos: "adj.", def: "商業的；商務的", sentence: "Taipei 101 is in a busy commercial area with many shops and offices.", target: "commercial" }
     ];
+  </script>
 
+  <script>
     let currentMode = 'cards';
-    let starredWordIds = new Set(JSON.parse(localStorage.getItem('vocab_starred_ids') || '[]'));
-    let masteredWordIds = new Set(JSON.parse(localStorage.getItem('vocab_mastered_ids') || '[]'));
     let activeUnitFilter = 'ALL';
     let isStarredOnlyMode = false;
     let filteredWords = [...VOCABULARY_DATA];
@@ -584,89 +642,80 @@
     let isCardFlipped = false;
     let speechRate = 1.0;
 
-    // Quiz Mode State
-    let quizQuestion = null;
-    let quizScore = 0;
-    let quizTotalAnswered = 0;
+    let starredWordIds = new Set();
+    let masteredWordIds = new Set();
 
-    // Cloze Mode State
-    let clozeIndex = 0;
-    let isClozeTypingMode = false;
-    let currentClozeWord = null;
+    try {
+      const savedStarred = localStorage.getItem('e4u_starred_ids');
+      if (savedStarred) starredWordIds = new Set(JSON.parse(savedStarred));
+      const savedMastered = localStorage.getItem('e4u_mastered_ids');
+      if (savedMastered) masteredWordIds = new Set(JSON.parse(savedMastered));
+    } catch(e) {}
 
-    /* Web Audio Sound Synthesizer (安全延遲初始化，相容手機瀏覽器) */
-    let audioCtx = null;
-    function getAudioCtx() {
+    function saveStarredToStorage() {
       try {
-        if (!audioCtx) {
-          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-          if (AudioContextClass) audioCtx = new AudioContextClass();
-        }
-        if (audioCtx && audioCtx.state === 'suspended') {
-          audioCtx.resume();
-        }
-      } catch (e) {}
-      return audioCtx;
+        localStorage.setItem('e4u_starred_ids', JSON.stringify([...starredWordIds]));
+        updateStarredBadge();
+      } catch(e) {}
     }
 
-    function playAudioTone(type) {
+    function saveMasteredToStorage() {
       try {
-        const ctx = getAudioCtx();
-        if (!ctx) return;
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
+        localStorage.setItem('e4u_mastered_ids', JSON.stringify([...masteredWordIds]));
+        updateUnitProgressBar();
+        updateUnitDropdownLabels();
+      } catch(e) {}
+    }
 
-        const now = ctx.currentTime;
-        if (type === 'correct') {
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(523.25, now); // C5
-          osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.15); // G5
-          gain.gain.setValueAtTime(0.15, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.3);
-          osc.start(now);
-          osc.stop(now + 0.3);
-        } else if (type === 'wrong') {
-          osc.type = 'triangle';
-          osc.frequency.setValueAtTime(311.13, now); // Eb4
-          osc.frequency.exponentialRampToValueAtTime(220.00, now + 0.2); // A3
-          gain.gain.setValueAtTime(0.2, now);
-          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
-          osc.start(now);
-          osc.stop(now + 0.25);
-        }
-      } catch (e) {
-        // Audio error fallback
+    function markWordAsMastered(id) {
+      if (!masteredWordIds.has(id)) {
+        masteredWordIds.add(id);
+        saveMasteredToStorage();
       }
     }
 
-    /* Toast Notification Helper */
-    function showToast(message, isSuccess = true) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toast-msg');
-      const toastIcon = document.getElementById('toast-icon');
-
-      toastMsg.textContent = message;
-      toastIcon.className = isSuccess 
-        ? 'fa-solid fa-circle-check text-emerald-400' 
-        : 'fa-solid fa-circle-info text-amber-400';
-
-      toast.classList.remove('translate-y-20', 'opacity-0');
-      setTimeout(() => {
-        toast.classList.add('translate-y-20', 'opacity-0');
-      }, 2000);
+    let audioCtx = null;
+    function playAudioTone(type) {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContext) return;
+        if (!audioCtx) audioCtx = new AudioContext();
+        if (audioCtx.state === 'suspended') audioCtx.resume();
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        const now = audioCtx.currentTime;
+        if (type === 'correct') {
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(523.25, now);
+          osc.frequency.setValueAtTime(659.25, now + 0.1);
+          osc.frequency.setValueAtTime(783.99, now + 0.2);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+          osc.start(now);
+          osc.stop(now + 0.4);
+        } else {
+          osc.type = 'triangle';
+          osc.frequency.setValueAtTime(300, now);
+          osc.frequency.setValueAtTime(220, now + 0.12);
+          gain.gain.setValueAtTime(0.15, now);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+          osc.start(now);
+          osc.stop(now + 0.35);
+        }
+      } catch(e) {}
     }
 
-    function speakText(text, rate = null) {
+    function speakText(text, rate = speechRate) {
       if (!('speechSynthesis' in window)) {
-        showToast('您的瀏覽器不支援語音播放', false);
+        showToast('此瀏覽器不支援語音合成');
         return;
       }
       window.speechSynthesis.cancel();
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.lang = 'en-US';
-      utterance.rate = rate || speechRate;
+      utterance.rate = rate;
       window.speechSynthesis.speak(utterance);
     }
 
@@ -674,33 +723,24 @@
       if (speechRate === 1.0) speechRate = 0.8;
       else if (speechRate === 0.8) speechRate = 0.6;
       else speechRate = 1.0;
-      document.getElementById('speed-btn').textContent = `語速 ${speechRate}x`;
-      showToast(`發音語速已調整為 ${speechRate}x`);
+      document.getElementById('speed-btn').textContent = `語速 ${speechRate.toFixed(1)}x`;
+      showToast(`發音語速已切換為 ${speechRate.toFixed(1)}x`);
     }
 
-    /* Storage Helper */
-    function saveStarredToStorage() {
-      localStorage.setItem('vocab_starred_ids', JSON.stringify([...starredWordIds]));
-      updateStarredBadge();
-    }
-
-    function saveMasteredToStorage() {
-      localStorage.setItem('vocab_mastered_ids', JSON.stringify([...masteredWordIds]));
-      updateUnitProgressBar();
-      updateUnitDropdownLabels();
-    }
-
-    function markWordAsMastered(wordId) {
-      if (!masteredWordIds.has(wordId)) {
-        masteredWordIds.add(wordId);
-        saveMasteredToStorage();
-      }
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const msgEl = document.getElementById('toast-message');
+      msgEl.textContent = msg;
+      toast.classList.remove('opacity-0', 'pointer-events-none');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => {
+        toast.classList.add('opacity-0', 'pointer-events-none');
+      }, 2000);
     }
 
     function updateUnitProgressBar() {
       const banner = document.getElementById('unit-progress-banner');
       if (!banner) return;
-
       if (isStarredOnlyMode) {
         banner.classList.add('hidden');
         return;
@@ -728,24 +768,23 @@
       fillEl.style.width = `${pct}%`;
 
       if (pct === 100) {
-        badgeEl.className = 'text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 animate-bounce';
-        badgeEl.innerHTML = '<i class="fa-solid fa-trophy mr-1 text-amber-500"></i>已全數掌握！';
-        encourEl.innerHTML = '🎉 太棒了！你已經徹底精通本單元所有核心單字！';
+        badgeEl.className = 'text-[11px] font-bold px-2 py-0.5 rounded-full bg-morandi-sageLight text-morandi-sageDark border border-morandi-sageBorder animate-bounce';
+        badgeEl.innerHTML = '<i class="fa-solid fa-trophy mr-1 text-morandi-clay"></i>已全數掌握！';
+        encourEl.innerHTML = '🎉 太棒了！你已經培育完成本單元所有核心單字！';
       } else if (pct >= 50) {
-        badgeEl.className = 'text-[10px] font-semibold px-2 py-0.5 rounded-full bg-blue-100 text-blue-700';
-        badgeEl.textContent = '進展神速 🚀';
+        badgeEl.className = 'text-[11px] font-semibold px-2 py-0.5 rounded-full bg-[#e8eee9] text-morandi-sageDark border border-morandi-sageBorder';
+        badgeEl.textContent = '茁壯成長中 🌿';
         encourEl.innerHTML = '💪 已突破一半！繼續堅持完成剩下的單字吧！';
       } else {
-        badgeEl.className = 'text-[10px] font-semibold px-2 py-0.5 rounded-full bg-slate-100 text-slate-600';
-        badgeEl.textContent = '努力學習中 🌱';
-        encourEl.innerHTML = '<i class="fa-regular fa-lightbulb text-amber-400 mr-1"></i>翻卡查看中文與例句、或測驗答對時即可累計進度！';
+        badgeEl.className = 'text-[11px] font-semibold px-2 py-0.5 rounded-full bg-morandi-sageLight text-morandi-sageDark border border-morandi-sageBorder';
+        badgeEl.textContent = '培育中 🌱';
+        encourEl.innerHTML = '翻卡查看中文與例句、或在測驗中答對，即可自動累計單字進度！';
       }
     }
 
     function updateUnitDropdownLabels() {
       const select = document.getElementById('unit-selector');
       if (!select) return;
-
       Array.from(select.options).forEach(opt => {
         const val = opt.value;
         const words = val === 'ALL' ? VOCABULARY_DATA : VOCABULARY_DATA.filter(w => w.unit === val);
@@ -760,7 +799,6 @@
       const targetWords = activeUnitFilter === 'ALL'
         ? VOCABULARY_DATA
         : VOCABULARY_DATA.filter(w => w.unit === activeUnitFilter);
-
       targetWords.forEach(w => masteredWordIds.delete(w.id));
       saveMasteredToStorage();
       showToast('已重設該單元進度，重新開始挑戰！');
@@ -768,7 +806,7 @@
 
     function updateStarredBadge() {
       const countEl = document.getElementById('header-starred-count');
-      countEl.textContent = starredWordIds.size;
+      if (countEl) countEl.textContent = starredWordIds.size;
     }
 
     function toggleStarWord(id) {
@@ -780,34 +818,26 @@
         showToast('已加入生字複習清單 ⭐');
       }
       saveStarredToStorage();
-      renderCard(currentCardIndex);
+      if (currentMode === 'cards') renderCard(currentCardIndex);
       if (currentMode === 'list') renderWordTable();
     }
 
     function applyWordFilters() {
       let list = VOCABULARY_DATA;
-
       if (isStarredOnlyMode) {
         list = list.filter(w => starredWordIds.has(w.id));
       } else if (activeUnitFilter !== 'ALL') {
         list = list.filter(w => w.unit === activeUnitFilter);
       }
-
       filteredWords = list;
       currentCardIndex = 0;
 
-      // Update filter UI indicator
       const banner = document.getElementById('filter-banner');
-      if (isStarredOnlyMode) {
-        banner.classList.remove('hidden');
-      } else {
-        banner.classList.add('hidden');
-      }
+      if (isStarredOnlyMode) banner.classList.remove('hidden');
+      else banner.classList.add('hidden');
 
-      if (filteredWords.length === 0) {
-        if (isStarredOnlyMode) {
-          showToast('複習清單目前是空的！快去給不熟單字點擊星星吧', false);
-        }
+      if (filteredWords.length === 0 && isStarredOnlyMode) {
+        showToast('複習清單目前是空的！快去給不熟單字點擊星星吧');
       }
     }
 
@@ -821,7 +851,7 @@
 
     function toggleStarredOnlyMode() {
       if (starredWordIds.size === 0) {
-        showToast('目前尚未標記任何不熟的生字喔！', false);
+        showToast('目前尚未標記任何不熟的生字喔！');
         return;
       }
       isStarredOnlyMode = !isStarredOnlyMode;
@@ -845,48 +875,71 @@
     function switchMode(mode) {
       currentMode = mode;
       document.querySelectorAll('.mode-tab').forEach(btn => {
-        btn.classList.remove('bg-white', 'text-blue-600', 'shadow-sm');
-        btn.classList.add('text-slate-600');
+        btn.classList.remove('bg-white', 'text-morandi-sageDark', 'shadow-sm');
+        btn.classList.add('text-morandi-taupe');
       });
-
       const activeBtn = document.getElementById(`tab-${mode}`);
       if (activeBtn) {
-        activeBtn.classList.add('bg-white', 'text-blue-600', 'shadow-sm');
-        activeBtn.classList.remove('text-slate-600');
+        activeBtn.classList.add('bg-white', 'text-morandi-sageDark', 'shadow-sm');
+        activeBtn.classList.remove('text-morandi-taupe');
       }
-
       ['cards', 'quiz', 'cloze', 'list'].forEach(m => {
         document.getElementById(`mode-${m}`).classList.add('hidden');
       });
       document.getElementById(`mode-${mode}`).classList.remove('hidden');
-
       refreshActiveModeView();
     }
 
     function refreshActiveModeView() {
-      if (currentMode === 'cards') {
-        renderCard(currentCardIndex);
-      } else if (currentMode === 'quiz') {
-        quizScore = 0;
-        quizTotalAnswered = 0;
-        document.getElementById('quiz-score').textContent = '0';
-        generateQuizQuestion();
-      } else if (currentMode === 'cloze') {
-        clozeIndex = 0;
-        renderClozeQuestion();
-      } else if (currentMode === 'list') {
-        renderWordTable();
-      }
+      updateUnitProgressBar();
+      updateListUnitBadges();
+      if (currentMode === 'cards') renderCard(0);
+      else if (currentMode === 'quiz') generateQuizQuestion();
+      else if (currentMode === 'cloze') { clozeIndex = 0; renderClozeQuestion(); }
+      else if (currentMode === 'list') renderWordTable();
+    }
+
+    function setListUnitFilter(unit) {
+      activeUnitFilter = unit;
+      const select = document.getElementById('unit-selector');
+      if (select) select.value = unit;
+      isStarredOnlyMode = false;
+      applyWordFilters();
+      refreshActiveModeView();
+    }
+
+    function updateListUnitBadges() {
+      document.querySelectorAll('.list-unit-badge').forEach(btn => {
+        if (btn.getAttribute('data-unit') === activeUnitFilter && !isStarredOnlyMode) {
+          btn.className = "list-unit-badge px-2.5 py-1 rounded-lg border font-bold text-xs whitespace-nowrap transition bg-morandi-sage text-white border-morandi-sage shadow-xs";
+        } else {
+          btn.className = "list-unit-badge px-2.5 py-1 rounded-lg border font-semibold text-xs whitespace-nowrap transition bg-[#f6f5f0] text-morandi-charcoal border-morandi-sageBorder/60 hover:bg-morandi-sageLight";
+        }
+      });
+    }
+
+    function getPosBadgeHtml(pos) {
+      const p = (pos || '').toLowerCase();
+      let colorClasses = 'bg-[#eeebe5] text-morandi-charcoal border-[#dedad2] font-bold';
+      if (p.includes('v.')) colorClasses = 'bg-[#edf2ee] text-[#4d5e51] border-[#c8d4cb] font-bold';
+      else if (p.includes('adj.')) colorClasses = 'bg-[#f6f0ed] text-[#8c6b5e] border-[#dfcbc4] font-bold';
+      else if (p.includes('adv.')) colorClasses = 'bg-[#f4eff3] text-[#7a6575] border-[#dac9d6] font-bold';
+      else if (p.includes('n.')) colorClasses = 'bg-[#edf2f5] text-[#556b7a] border-[#cad8e0] font-bold';
+      return `<span class="text-[11px] sm:text-xs px-2.5 py-0.5 rounded-full border shadow-xs ${colorClasses}">${pos}</span>`;
     }
 
     function renderCard(index) {
       if (filteredWords.length === 0) {
         document.getElementById('card-word').textContent = '無符合單字';
-        document.getElementById('card-phonetic').textContent = '請選擇其他單元或取消篩選';
+        document.getElementById('card-phonetic').textContent = '';
+        document.getElementById('card-front-pos').innerHTML = '';
+        document.getElementById('card-chinese').textContent = '目前無單字';
+        document.getElementById('card-sentence').textContent = '';
         document.getElementById('card-counter').textContent = '0 / 0';
+        document.getElementById('card-unit-badge').textContent = '-';
+        document.getElementById('card-progress-fill').style.width = '0%';
         return;
       }
-
       if (index < 0) currentCardIndex = filteredWords.length - 1;
       else if (index >= filteredWords.length) currentCardIndex = 0;
       else currentCardIndex = index;
@@ -894,36 +947,28 @@
       const item = filteredWords[currentCardIndex];
       const isStarred = starredWordIds.has(item.id);
 
-      // Reset flip to front
       isCardFlipped = false;
       document.getElementById('flashcard-inner').classList.remove('rotate-y-180');
 
-      // Update Front
-      document.getElementById('card-front-pos').textContent = item.pos;
+      document.getElementById('card-front-pos').innerHTML = getPosBadgeHtml(item.pos);
       document.getElementById('card-word').textContent = item.word;
       document.getElementById('card-phonetic').textContent = item.phonetic;
-      
-      // Update Back
       document.getElementById('card-back-pos').textContent = item.pos;
       document.getElementById('card-chinese').textContent = item.def;
-      
-      // Highlight target word in sentence
+
       const targetRegex = new RegExp(`(${item.word}|${item.target})`, 'gi');
-      const highlightedSentence = item.sentence.replace(targetRegex, `<strong class="text-yellow-300 font-bold underline underline-offset-4">$1</strong>`);
+      const highlightedSentence = item.sentence.replace(targetRegex, `<strong class="text-[#f1dccb] font-bold underline underline-offset-4">$1</strong>`);
       document.getElementById('card-sentence').innerHTML = highlightedSentence;
 
-      // Update Star Icon
       const starFront = document.getElementById('card-star-btn');
       const starBack = document.getElementById('card-back-star-btn');
-      const starHtml = isStarred 
-        ? '<i class="fa-solid fa-star text-xl text-amber-400"></i>' 
-        : '<i class="fa-regular fa-star text-xl text-slate-300 hover:text-amber-400"></i>';
-      starFront.innerHTML = starHtml;
+      starFront.innerHTML = isStarred 
+        ? '<i class="fa-solid fa-star text-xl text-morandi-clay animate-pop"></i>' 
+        : '<i class="fa-regular fa-star text-xl text-[#b5b1a6] hover:text-morandi-clay"></i>';
       starBack.innerHTML = isStarred 
-        ? '<i class="fa-solid fa-star text-xl text-amber-300"></i>' 
+        ? '<i class="fa-solid fa-star text-xl text-[#dfcbc4]"></i>' 
         : '<i class="fa-regular fa-star text-xl text-white/50"></i>';
 
-      // Counter & Progress
       document.getElementById('card-counter').textContent = `${currentCardIndex + 1} / ${filteredWords.length}`;
       document.getElementById('card-unit-badge').textContent = item.unit;
       const pct = ((currentCardIndex + 1) / filteredWords.length) * 100;
@@ -931,35 +976,35 @@
     }
 
     function flipCard() {
+      if (filteredWords.length === 0) return;
       isCardFlipped = !isCardFlipped;
-      const card = document.getElementById('flashcard-inner');
+      const inner = document.getElementById('flashcard-inner');
       if (isCardFlipped) {
-        card.classList.add('rotate-y-180');
-        // 翻開背面認真學習過該單字，自動計入熟練進度
-        if (filteredWords.length > 0 && filteredWords[currentCardIndex]) {
-          markWordAsMastered(filteredWords[currentCardIndex].id);
-        }
+        inner.classList.add('rotate-y-180');
+        const item = filteredWords[currentCardIndex];
+        markWordAsMastered(item.id);
       } else {
-        card.classList.remove('rotate-y-180');
+        inner.classList.remove('rotate-y-180');
       }
-    }
-
-    function nextCard() {
-      renderCard(currentCardIndex + 1);
     }
 
     function prevCard() {
       renderCard(currentCardIndex - 1);
     }
 
-    function toggleStarCurrentWord() {
-      if (filteredWords.length === 0) return;
-      toggleStarWord(filteredWords[currentCardIndex].id);
+    function nextCard() {
+      renderCard(currentCardIndex + 1);
     }
 
-    function playCurrentWordAudio(customRate = null) {
+    function toggleStarCurrentWord() {
       if (filteredWords.length === 0) return;
-      speakText(filteredWords[currentCardIndex].word, customRate);
+      const item = filteredWords[currentCardIndex];
+      toggleStarWord(item.id);
+    }
+
+    function playCurrentWordAudio(rate = speechRate) {
+      if (filteredWords.length === 0) return;
+      speakText(filteredWords[currentCardIndex].word, rate);
     }
 
     function playCurrentSentenceAudio() {
@@ -967,66 +1012,76 @@
       speakText(filteredWords[currentCardIndex].sentence);
     }
 
-    function playQuizWordAudio(customRate = null) {
-      if (!quizQuestion) return;
-      speakText(quizQuestion.word, customRate);
-    }
+    document.addEventListener('keydown', (e) => {
+      if (currentMode !== 'cards') return;
+      if (e.code === 'Space') {
+        e.preventDefault();
+        flipCard();
+      } else if (e.code === 'ArrowLeft') {
+        prevCard();
+      } else if (e.code === 'ArrowRight') {
+        nextCard();
+      }
+    });
+
+    let quizQuestion = null;
+    let quizScore = 0;
+    let quizTotalAnswered = 0;
 
     function generateQuizQuestion() {
-      const sourceList = filteredWords.length >= 4 ? filteredWords : VOCABULARY_DATA;
-      if (sourceList.length === 0) return;
+      const pool = filteredWords.length >= 4 ? filteredWords : VOCABULARY_DATA;
+      if (pool.length < 4) return;
 
-      document.getElementById('quiz-feedback-box').classList.add('hidden');
-      document.getElementById('quiz-next-btn').classList.add('hidden');
+      quizQuestion = pool[Math.floor(Math.random() * pool.length)];
 
-      const correctWord = sourceList[Math.floor(Math.random() * sourceList.length)];
-      quizQuestion = correctWord;
+      const wrongPool = VOCABULARY_DATA.filter(w => w.id !== quizQuestion.id);
+      const wrongOptions = [];
+      const usedIds = new Set([quizQuestion.id]);
 
-      // Gather 3 wrong distractors
-      const distractors = [];
-      const usedIds = new Set([correctWord.id]);
-
-      while (distractors.length < 3) {
-        const rand = VOCABULARY_DATA[Math.floor(Math.random() * VOCABULARY_DATA.length)];
-        if (!usedIds.has(rand.id)) {
-          distractors.push(rand);
-          usedIds.add(rand.id);
+      while (wrongOptions.length < 3 && wrongPool.length > 0) {
+        const candidate = wrongPool[Math.floor(Math.random() * wrongPool.length)];
+        if (!usedIds.has(candidate.id)) {
+          usedIds.add(candidate.id);
+          wrongOptions.push(candidate);
         }
       }
 
-      const options = [correctWord, ...distractors].sort(() => Math.random() - 0.5);
+      const options = [quizQuestion, ...wrongOptions].sort(() => Math.random() - 0.5);
 
-      // Render Prompt
-      document.getElementById('quiz-question-word').textContent = correctWord.word;
-      document.getElementById('quiz-question-sub').textContent = `${correctWord.phonetic} · ${correctWord.pos}`;
+      document.getElementById('quiz-question-word').textContent = quizQuestion.word;
+      document.getElementById('quiz-question-sub').textContent = `${quizQuestion.phonetic} · ${quizQuestion.pos}`;
       document.getElementById('quiz-counter').textContent = `題目 #${quizTotalAnswered + 1}`;
+      document.getElementById('quiz-feedback-box').classList.add('hidden');
+      document.getElementById('quiz-next-btn').classList.add('hidden');
 
-      // Render Options with compact mobile styling
       const container = document.getElementById('quiz-options-container');
       container.innerHTML = '';
 
       options.forEach((opt, idx) => {
         const btn = document.createElement('button');
-        btn.className = "quiz-opt w-full text-left p-2.5 sm:p-3.5 rounded-xl border border-slate-200 bg-white hover:bg-blue-50/60 hover:border-blue-300 font-medium text-slate-800 transition flex items-center justify-between group active:scale-[0.99]";
+        btn.className = "quiz-opt w-full text-left p-2.5 sm:p-3.5 rounded-xl border border-morandi-sageBorder/60 bg-white hover:bg-morandi-sageLight/50 hover:border-morandi-sage font-medium text-morandi-charcoal transition flex items-center justify-between group active:scale-[0.99]";
         btn.innerHTML = `
           <div class="flex items-center gap-2 sm:gap-3 min-w-0">
-            <span class="w-6 h-6 rounded-md bg-slate-100 text-slate-500 font-bold text-xs flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition flex-shrink-0">
+            <span class="w-6 h-6 rounded-md bg-[#eeebe5] text-morandi-taupe font-bold text-xs flex items-center justify-center group-hover:bg-morandi-sage group-hover:text-white transition flex-shrink-0">
               ${['A', 'B', 'C', 'D'][idx]}
             </span>
             <span class="text-xs sm:text-sm font-semibold truncate">${opt.def}</span>
           </div>
-          <span class="text-[11px] text-slate-400 font-mono flex-shrink-0">${opt.pos}</span>
+          <span class="text-[11px] text-morandi-taupe font-mono flex-shrink-0">${opt.pos}</span>
         `;
-        btn.onclick = () => checkQuizAnswer(btn, opt.id === correctWord.id);
+        btn.onclick = () => checkQuizAnswer(btn, opt.id === quizQuestion.id);
         container.appendChild(btn);
       });
+
+      const modeSection = document.getElementById('mode-quiz');
+      if (modeSection && quizTotalAnswered > 0) {
+        modeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
 
     function checkQuizAnswer(selectedBtn, isCorrect) {
-      // Disable options
       document.querySelectorAll('.quiz-opt').forEach(btn => btn.disabled = true);
       quizTotalAnswered++;
-
       const feedbackBox = document.getElementById('quiz-feedback-box');
       feedbackBox.classList.remove('hidden');
 
@@ -1035,110 +1090,156 @@
         quizScore += 10;
         document.getElementById('quiz-score').textContent = quizScore;
         markWordAsMastered(quizQuestion.id);
-        selectedBtn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900');
-        feedbackBox.className = "p-2.5 sm:p-3 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-900 text-xs sm:text-sm font-medium flex items-center gap-2";
+        selectedBtn.classList.add('bg-morandi-sageLight', 'border-morandi-sage', 'text-morandi-sageDark');
+        feedbackBox.className = "p-2.5 sm:p-3 rounded-xl border border-morandi-sageBorder bg-morandi-sageLight text-morandi-sageDark text-xs sm:text-sm font-medium flex items-center gap-2";
         feedbackBox.innerHTML = `
-          <i class="fa-solid fa-circle-check text-emerald-500 text-base"></i>
-          <div>答對了！已記入單元完成進度 🌟</div>
+          <i class="fa-solid fa-circle-check text-morandi-sage text-base"></i>
+          <div>答對了！已記入單元完成進度 🌿</div>
         `;
       } else {
         playAudioTone('wrong');
-        selectedBtn.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-900');
-        feedbackBox.className = "p-2.5 sm:p-3 rounded-xl border border-rose-200 bg-rose-50 text-rose-900 text-xs sm:text-sm font-medium flex flex-col gap-1.5";
+        selectedBtn.classList.add('bg-morandi-clayLight', 'border-morandi-clay', 'text-morandi-charcoal');
+        feedbackBox.className = "p-2.5 sm:p-3 rounded-xl border border-morandi-clayBorder bg-morandi-clayLight text-morandi-charcoal text-xs sm:text-sm font-medium flex flex-col gap-1.5";
         feedbackBox.innerHTML = `
           <div class="flex items-center justify-between gap-2">
             <div class="flex items-center gap-1.5 truncate">
-              <i class="fa-solid fa-circle-xmark text-rose-500 text-base flex-shrink-0"></i>
+              <i class="fa-solid fa-circle-xmark text-morandi-clay text-base flex-shrink-0"></i>
               <span class="truncate">正確答案：<strong>${quizQuestion.def}</strong></span>
             </div>
-            <button onclick="toggleStarWord(${quizQuestion.id}); this.textContent='已加入 ⭐';" class="text-[11px] text-blue-700 bg-white px-2 py-0.5 rounded border border-rose-200 font-bold hover:bg-slate-50 flex-shrink-0">
+            <button onclick="toggleStarWord(${quizQuestion.id}); this.textContent='已加入 ⭐';" class="text-[11px] text-morandi-clay bg-white px-2 py-0.5 rounded border border-morandi-clayBorder font-bold hover:bg-[#faf7f5] flex-shrink-0">
               加入生字簿 ⭐
             </button>
           </div>
         `;
       }
 
-      document.getElementById('quiz-next-btn').classList.remove('hidden');
+      const nextBtn = document.getElementById('quiz-next-btn');
+      nextBtn.classList.remove('hidden');
+      setTimeout(() => {
+        nextBtn.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }, 60);
     }
 
+    function playQuizWordAudio() {
+      if (quizQuestion) speakText(quizQuestion.word);
+    }
+
+    let clozeIndex = 0;
+    let currentClozeWord = null;
+    let isClozeTypingMode = false;
+
     function renderClozeQuestion() {
-      const sourceList = filteredWords.length > 0 ? filteredWords : VOCABULARY_DATA;
-      if (sourceList.length === 0) return;
+      const pool = filteredWords.length > 0 ? filteredWords : VOCABULARY_DATA;
+      if (clozeIndex >= pool.length) clozeIndex = 0;
+      currentClozeWord = pool[clozeIndex];
 
-      currentClozeWord = sourceList[clozeIndex % sourceList.length];
       document.getElementById('cloze-unit-badge').textContent = currentClozeWord.unit;
-      document.getElementById('cloze-feedback-box').classList.add('hidden');
-      document.getElementById('cloze-next-btn').classList.add('hidden');
-      document.getElementById('cloze-type-hint').textContent = '';
 
-      // Prepare sentence with blank
-      const targetRegex = new RegExp(`\\b(${currentClozeWord.word}|${currentClozeWord.target})\\b`, 'i');
-      const clozeSentence = currentClozeWord.sentence.replace(targetRegex, `<span class="border-b-2 border-dashed border-indigo-500 text-indigo-600 font-bold px-1.5 py-0.5 bg-indigo-50 rounded">________</span>`);
-      document.getElementById('cloze-sentence-display').innerHTML = clozeSentence;
-      document.getElementById('cloze-hint-chinese').textContent = currentClozeWord.def;
-      document.getElementById('cloze-hint-pos').textContent = `(${currentClozeWord.pos})`;
+      const targetRegex = new RegExp(`(${currentClozeWord.word}|${currentClozeWord.target})`, 'i');
+      const sentenceWithBlank = currentClozeWord.sentence.replace(
+        targetRegex,
+        `<span class="border-b-2 border-dashed border-morandi-sage text-morandi-sageDark font-bold px-1.5 py-0.5 bg-morandi-sageLight rounded inline-block font-mono tracking-wider">______</span>`
+      );
+      document.getElementById('cloze-sentence-display').innerHTML = sentenceWithBlank;
 
-      // Prepare Choice Mode Options (compact 2x2 grid for mobile)
-      const container = document.getElementById('cloze-choice-area');
-      container.innerHTML = '';
-
-      const distractors = [];
-      const usedIds = new Set([currentClozeWord.id]);
-
-      while (distractors.length < 3) {
-        const rand = VOCABULARY_DATA[Math.floor(Math.random() * VOCABULARY_DATA.length)];
-        if (!usedIds.has(rand.id)) {
-          distractors.push(rand);
-          usedIds.add(rand.id);
-        }
+      const hintBtn = document.getElementById('cloze-def-hint-btn');
+      const hintContent = document.getElementById('cloze-def-hint-content');
+      if (hintBtn) hintBtn.classList.remove('hidden');
+      if (hintContent) {
+        hintContent.classList.add('hidden');
+        document.getElementById('cloze-hint-chinese').textContent = currentClozeWord.def;
+        document.getElementById('cloze-hint-pos').textContent = `(${currentClozeWord.pos})`;
       }
 
-      const choices = [currentClozeWord, ...distractors].sort(() => Math.random() - 0.5);
+      document.getElementById('cloze-feedback-box').classList.add('hidden');
+      document.getElementById('cloze-next-btn').classList.add('hidden');
+      document.getElementById('cloze-input-word').value = '';
+      document.getElementById('cloze-type-hint').classList.add('hidden');
+
+      updateClozeHintButtonsVisibility();
+
+      if (!isClozeTypingMode) {
+        renderClozeChoices();
+      }
+    }
+
+    function revealClozeChineseHint() {
+      const hintBtn = document.getElementById('cloze-def-hint-btn');
+      const hintContent = document.getElementById('cloze-def-hint-content');
+      if (hintBtn) hintBtn.classList.add('hidden');
+      if (hintContent) hintContent.classList.remove('hidden');
+    }
+
+    function updateClozeHintButtonsVisibility() {
+      const letterBtn = document.getElementById('cloze-first-letter-btn');
+      if (letterBtn) {
+        if (isClozeTypingMode) letterBtn.classList.remove('hidden');
+        else letterBtn.classList.add('hidden');
+      }
+    }
+
+    function renderClozeChoices() {
+      const container = document.getElementById('cloze-choice-area');
+      container.innerHTML = '';
+      const pool = VOCABULARY_DATA.filter(w => w.id !== currentClozeWord.id);
+      const wrongList = [];
+      const used = new Set([currentClozeWord.id]);
+
+      while (wrongList.length < 3 && pool.length > 0) {
+        const c = pool[Math.floor(Math.random() * pool.length)];
+        if (!used.has(c.id)) {
+          used.add(c.id);
+          wrongList.push(c);
+        }
+      }
+      const choices = [currentClozeWord, ...wrongList].sort(() => Math.random() - 0.5);
+
       choices.forEach(item => {
         const btn = document.createElement('button');
-        btn.className = "cloze-opt p-2 sm:p-3 rounded-xl border border-slate-200 bg-white hover:bg-indigo-50/50 hover:border-indigo-300 font-bold text-xs sm:text-sm text-slate-800 text-center transition flex flex-col items-center justify-center active:scale-[0.98]";
+        btn.className = "cloze-opt p-2.5 sm:p-3 rounded-xl border border-morandi-sageBorder/60 bg-white hover:bg-morandi-sageLight/50 hover:border-morandi-sage font-bold text-xs sm:text-sm text-morandi-charcoal text-center transition flex flex-col items-center justify-center active:scale-[0.98]";
         btn.innerHTML = `
           <span class="truncate w-full">${item.word}</span>
-          <span class="text-[10px] font-mono text-slate-400 font-normal">${item.pos}</span>
+          <span class="text-[10px] font-mono text-morandi-taupe font-normal">${item.pos}</span>
         `;
         btn.onclick = () => checkClozeChoice(btn, item.id === currentClozeWord.id);
         container.appendChild(btn);
       });
-
-      // Clear typing input if in typing mode
-      const inputField = document.getElementById('cloze-input-word');
-      inputField.value = '';
     }
 
     function checkClozeChoice(selectedBtn, isCorrect) {
-      document.querySelectorAll('.cloze-opt').forEach(btn => btn.disabled = true);
+      document.querySelectorAll('.cloze-opt').forEach(b => b.disabled = true);
       const feedback = document.getElementById('cloze-feedback-box');
       feedback.classList.remove('hidden');
 
       if (isCorrect) {
         playAudioTone('correct');
         markWordAsMastered(currentClozeWord.id);
-        selectedBtn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900');
-        feedback.className = "p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-900 text-sm font-medium flex items-center gap-2";
+        selectedBtn.classList.add('bg-morandi-sageLight', 'border-morandi-sage', 'text-morandi-sageDark');
+        feedback.className = "p-2.5 sm:p-3 rounded-xl border border-morandi-sageBorder bg-morandi-sageLight text-morandi-sageDark text-xs sm:text-sm font-medium flex items-center gap-2";
         feedback.innerHTML = `
-          <i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i>
-          <div>完全正確！已記入單元熟練進度 🎯</div>
+          <i class="fa-solid fa-circle-check text-morandi-sage text-base"></i>
+          <div>完全正確！已記入單元進度 🎯</div>
         `;
       } else {
         playAudioTone('wrong');
-        selectedBtn.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-900');
-        feedback.className = "p-4 rounded-xl border border-rose-200 bg-rose-50 text-rose-900 text-sm font-medium flex justify-between items-center";
+        selectedBtn.classList.add('bg-morandi-clayLight', 'border-morandi-clay', 'text-morandi-charcoal');
+        feedback.className = "p-2.5 sm:p-3 rounded-xl border border-morandi-clayBorder bg-morandi-clayLight text-morandi-charcoal text-xs sm:text-sm font-medium flex justify-between items-center";
         feedback.innerHTML = `
-          <div class="flex items-center gap-2">
-            <i class="fa-solid fa-circle-xmark text-rose-500 text-lg"></i>
-            <span>正確解答為：<strong>${currentClozeWord.word}</strong></span>
+          <div class="flex items-center gap-1.5">
+            <i class="fa-solid fa-circle-xmark text-morandi-clay text-base"></i>
+            <span>正確解答：<strong>${currentClozeWord.word}</strong></span>
           </div>
-          <button onclick="toggleStarWord(${currentClozeWord.id}); this.textContent='已加入 ⭐';" class="text-xs bg-white text-rose-700 px-2.5 py-1 rounded border border-rose-200 font-bold">
-            收進複習簿 ⭐
+          <button onclick="toggleStarWord(${currentClozeWord.id}); this.textContent='已加入 ⭐';" class="text-xs bg-white text-morandi-clay px-2 py-0.5 rounded border border-morandi-clayBorder font-bold">
+            加入複習簿 ⭐
           </button>
         `;
       }
-      document.getElementById('cloze-next-btn').classList.remove('hidden');
+
+      const nextBtn = document.getElementById('cloze-next-btn');
+      nextBtn.classList.remove('hidden');
+      setTimeout(() => {
+        nextBtn.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }, 60);
     }
 
     function checkTypedClozeAnswer() {
@@ -1146,34 +1247,45 @@
       const val = input.value.trim().toLowerCase();
       if (!val) return;
 
-      const correctVal = currentClozeWord.word.toLowerCase();
-      const targetVal = (currentClozeWord.target || '').toLowerCase();
-      const isCorrect = (val === correctVal || val === targetVal);
-
+      const target = currentClozeWord.word.toLowerCase();
+      const isCorrect = val === target || val === currentClozeWord.target.toLowerCase();
       const feedback = document.getElementById('cloze-feedback-box');
       feedback.classList.remove('hidden');
 
       if (isCorrect) {
         playAudioTone('correct');
         markWordAsMastered(currentClozeWord.id);
-        feedback.className = "p-4 rounded-xl border border-emerald-200 bg-emerald-50 text-emerald-900 text-sm font-medium flex items-center gap-2";
-        feedback.innerHTML = `<i class="fa-solid fa-circle-check text-emerald-500 text-lg"></i> 拼寫完全正確！已累計進度 🎯`;
+        feedback.className = "p-2.5 sm:p-3 rounded-xl border border-morandi-sageBorder bg-morandi-sageLight text-morandi-sageDark text-xs sm:text-sm font-medium flex items-center gap-2";
+        feedback.innerHTML = `<i class="fa-solid fa-circle-check text-morandi-sage text-base"></i> 拼寫完全正確！已累計進度 🎯`;
       } else {
         playAudioTone('wrong');
-        feedback.className = "p-4 rounded-xl border border-rose-200 bg-rose-50 text-rose-900 text-sm font-medium flex items-center justify-between";
+        feedback.className = "p-2.5 sm:p-3 rounded-xl border border-morandi-clayBorder bg-morandi-clayLight text-morandi-charcoal text-xs sm:text-sm font-medium flex items-center justify-between";
         feedback.innerHTML = `
           <span>正確拼寫為：<strong>${currentClozeWord.word}</strong></span>
-          <button onclick="toggleStarWord(${currentClozeWord.id})" class="text-xs bg-white text-rose-700 px-2 py-1 rounded border border-rose-200 font-bold">加入生字簿</button>
+          <button onclick="toggleStarWord(${currentClozeWord.id})" class="text-xs bg-white text-morandi-clay px-2 py-0.5 rounded border border-morandi-clayBorder font-bold">加入生字簿</button>
         `;
       }
-      document.getElementById('cloze-next-btn').classList.remove('hidden');
+
+      const nextBtn = document.getElementById('cloze-next-btn');
+      nextBtn.classList.remove('hidden');
+      setTimeout(() => {
+        nextBtn.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      }, 60);
     }
 
     function giveClozeLetterHint() {
       if (!currentClozeWord) return;
-      const hint = `首字提示：以「${currentClozeWord.word.charAt(0).toUpperCase()}」開頭，共 ${currentClozeWord.word.length} 個字母`;
-      document.getElementById('cloze-type-hint').textContent = hint;
-      showToast(hint);
+      const firstLetter = currentClozeWord.word.charAt(0).toUpperCase();
+      const length = currentClozeWord.word.length;
+      const hintBox = document.getElementById('cloze-type-hint');
+      hintBox.classList.remove('hidden');
+      hintBox.innerHTML = `
+        <span class="w-5 h-5 rounded-full bg-morandi-clay text-white flex items-center justify-center text-xs flex-shrink-0">
+          <i class="fa-solid fa-key"></i>
+        </span>
+        <span>首字提示：以 <strong class="text-morandi-charcoal text-sm font-extrabold px-1.5 py-0.5 bg-white rounded border border-morandi-clayBorder font-mono">${firstLetter}</strong> 開頭，共 <strong class="text-morandi-charcoal font-bold">${length}</strong> 個字母</span>
+      `;
+      showToast(`首字提示：${firstLetter}... (共 ${length} 字)`);
     }
 
     function toggleClozeInputType() {
@@ -1184,18 +1296,19 @@
       const choiceArea = document.getElementById('cloze-choice-area');
       const typeArea = document.getElementById('cloze-type-area');
 
+      updateClozeHintButtonsVisibility();
+
       if (isClozeTypingMode) {
         if (textSpan) textSpan.textContent = '切換為四選一模式';
-        if (icon) icon.className = 'fa-solid fa-list-check text-xs text-amber-100';
-        btn.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-amber-400 bg-gradient-to-r from-amber-500 to-orange-500 text-white hover:from-amber-600 hover:to-orange-600 text-xs font-bold shadow-sm shadow-amber-200 transition-all flex items-center gap-1.5 active:scale-95";
+        if (icon) icon.className = 'fa-solid fa-list-check text-xs text-white';
+        btn.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-morandi-clayBorder bg-morandi-clay text-white hover:bg-[#9e7a6e] text-xs font-bold shadow-xs transition-all flex items-center gap-1.5 active:scale-95";
         choiceArea.classList.add('hidden');
         typeArea.classList.remove('hidden');
-        // 不主動自動 focus，避免手機虛擬鍵盤一按切換就猛烈彈起遮擋題目
         showToast('已切換至手動拼字模式 ✍️');
       } else {
         if (textSpan) textSpan.textContent = '切換為手動拼字模式';
-        if (icon) icon.className = 'fa-solid fa-keyboard text-xs text-indigo-100';
-        btn.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-indigo-400 bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 text-xs font-bold shadow-sm shadow-indigo-200 transition-all flex items-center gap-1.5 active:scale-95";
+        if (icon) icon.className = 'fa-solid fa-keyboard text-xs text-morandi-sageLight';
+        btn.className = "px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg border border-morandi-sageBorder bg-morandi-sage text-white hover:bg-morandi-sageDark text-xs font-bold shadow-xs transition-all flex items-center gap-1.5 active:scale-95";
         choiceArea.classList.remove('hidden');
         typeArea.classList.add('hidden');
         showToast('已切換回四選一模式');
@@ -1205,67 +1318,68 @@
     function nextClozeQuestion() {
       clozeIndex++;
       renderClozeQuestion();
+      const modeSection = document.getElementById('mode-cloze');
+      if (modeSection) modeSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function speakClozeSentence() {
-      if (!currentClozeWord) return;
-      // 避免主動念出答案，將空格處替換為「blank」，讓使用者能聽懂語境又不會被暴雷
-      const targetRegex = new RegExp(`\\b(${currentClozeWord.word}|${currentClozeWord.target})\\b`, 'gi');
-      const maskedSentence = currentClozeWord.sentence.replace(targetRegex, 'blank');
-      speakText(maskedSentence);
+      if (currentClozeWord) speakText(currentClozeWord.sentence);
     }
 
     function renderWordTable() {
-      const tbody = document.getElementById('vocab-table-body');
-      const search = document.getElementById('list-search-input').value.toLowerCase().trim();
-      tbody.innerHTML = '';
+      const search = (document.getElementById('list-search-input')?.value || '').toLowerCase().trim();
+      let items = VOCABULARY_DATA;
 
-      let items = filteredWords;
+      if (isStarredOnlyMode) {
+        items = items.filter(w => starredWordIds.has(w.id));
+      } else if (activeUnitFilter !== 'ALL') {
+        items = items.filter(w => w.unit === activeUnitFilter);
+      }
+
       if (search) {
         items = items.filter(w => 
           w.word.toLowerCase().includes(search) ||
-          w.def.includes(search) ||
+          w.def.toLowerCase().includes(search) ||
+          w.pos.toLowerCase().includes(search) ||
           w.unit.toLowerCase().includes(search)
         );
       }
 
       document.getElementById('list-total-count').textContent = items.length;
+      const tbody = document.getElementById('vocab-table-body');
+      tbody.innerHTML = '';
 
       if (items.length === 0) {
-        tbody.innerHTML = `
-          <tr>
-            <td colspan="6" class="py-8 text-center text-slate-400">沒有找到相符的單字</td>
-          </tr>
-        `;
+        tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-morandi-taupe">沒有找到符合的單字</td></tr>`;
         return;
       }
 
       items.forEach(w => {
         const isStarred = starredWordIds.has(w.id);
         const tr = document.createElement('tr');
-        tr.className = "hover:bg-slate-50/80 transition group";
+        tr.className = "hover:bg-morandi-sageLight/40 transition group";
         tr.innerHTML = `
-          <td class="py-3 px-3 text-center">
-            <button onclick="toggleStarWord(${w.id})" class="p-1 hover:scale-110 transition">
-              <i class="${isStarred ? 'fa-solid fa-star text-amber-400' : 'fa-regular fa-star text-slate-300 group-hover:text-slate-400'}"></i>
+          <td class="py-3 px-2 text-center">
+            <button onclick="toggleStarWord(${w.id})" class="p-1 hover:scale-110 transition" title="加入/移出生字簿">
+              <i class="${isStarred ? 'fa-solid fa-star text-morandi-clay' : 'fa-regular fa-star text-[#b5b1a6] group-hover:text-morandi-clay'}"></i>
             </button>
           </td>
           <td class="py-3 px-3">
-            <span class="font-bold text-slate-900">${w.word}</span>
-            <span class="text-xs text-slate-400 font-mono block">${w.phonetic}</span>
+            <span class="font-bold text-morandi-charcoal">${w.word}</span>
+            <span class="text-xs text-morandi-taupe font-mono block">${w.phonetic}</span>
           </td>
-          <td class="py-3 px-3">
-            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-600">${w.pos}</span>
+          <td class="py-3 px-2">
+            ${getPosBadgeHtml(w.pos)}
           </td>
-          <td class="py-3 px-3 font-medium text-slate-700">
+          <td class="py-3 px-3 font-semibold text-morandi-charcoal">
             ${w.def}
-            <span class="text-[11px] text-blue-600 block sm:hidden mt-0.5">${w.unit}</span>
+            <span class="text-[10px] text-morandi-sage block sm:hidden font-mono mt-0.5">${w.unit}</span>
           </td>
-          <td class="py-3 px-3 hidden md:table-cell text-xs text-slate-500 max-w-xs leading-relaxed">
+          <td class="py-3 px-3 hidden md:table-cell text-xs text-morandi-taupe max-w-xs leading-relaxed">
             ${w.sentence}
           </td>
-          <td class="py-3 px-3 text-center">
-            <button onclick="speakText('${w.word}')" class="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition" title="朗讀發音">
+          <td class="py-3 px-2 text-center">
+            <button onclick="speakText('${w.word}')" class="p-1.5 text-morandi-taupe hover:text-morandi-sageDark hover:bg-morandi-sageLight rounded-lg transition" title="朗讀發音">
               <i class="fa-solid fa-volume-high"></i>
             </button>
           </td>
@@ -1277,7 +1391,7 @@
     function exportStarredList() {
       const starredList = VOCABULARY_DATA.filter(w => starredWordIds.has(w.id));
       if (starredList.length === 0) {
-        showToast('目前複習清單內尚無單字可供匯出', false);
+        showToast('目前複習清單內尚無單字可供匯出');
         return;
       }
       const textContent = starredList.map((w, idx) => 
@@ -1288,33 +1402,18 @@
       const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
       a.href = url;
-      a.download = `English_4U_9月號生字複習清單_${new Date().toISOString().slice(0, 10)}.txt`;
+      a.download = `單字小樹苗_九月號複習清單_${new Date().toISOString().slice(0, 10)}.txt`;
       a.click();
       URL.revokeObjectURL(url);
       showToast('複習清單已成功下載！');
     }
 
-    /* Keyboard Navigation */
-    window.addEventListener('keydown', (e) => {
-      if (currentMode === 'cards') {
-        if (e.code === 'Space') {
-          e.preventDefault();
-          flipCard();
-        } else if (e.code === 'ArrowRight') {
-          nextCard();
-        } else if (e.code === 'ArrowLeft') {
-          prevCard();
-        }
-      }
-    });
-
-    window.addEventListener('DOMContentLoaded', () => {
+    window.onload = function() {
       updateStarredBadge();
-      updateUnitProgressBar();
       updateUnitDropdownLabels();
       applyWordFilters();
-      renderCard(0);
-    });
+      refreshActiveModeView();
+    };
   </script>
 </body>
 </html>
